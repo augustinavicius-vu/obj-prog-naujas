@@ -29,7 +29,7 @@ int main()
     while (ivestisPagr)
     {
         // Buferio valymas is naujo vedant duomenis
-        std::cin.clear();            // Ivesties klaidos buferio istrynimas
+        std::cin.clear(); // Ivesties klaidos buferio istrynimas
         system("cls");
 
         // Veiksmu pasirinkimai - startas
@@ -53,7 +53,6 @@ int main()
             std::cin.clear();            // Ivesties klaidos buferio istrynimas
             std::cin.ignore(1000, '\n'); // Ivesties buferis ignoruojamas iki naujos eilutes
         }
-
 
         // Veiksmai
         // Naujas studentas
@@ -112,11 +111,11 @@ int main()
                 // Namu darbo rezultatas
                 int namuDarbasRezTemp = 0;
                 system("cls");
-                std::cout << "Iveskite studento NAMU DARBO rezultatus, jei norite baigti, iveskite b" << std::endl;
+                std::cout << "Iveskite studento NAMU DARBU rezultatus, jei norite baigti, iveskite b" << std::endl;
                 while (std::cin >> namuDarbasRezTemp)
                 {
                     // Namu darbu rez ivedimo pabaiga
-                    if (namuDarbasRezTemp == 'b')
+                    if (namuDarbasRezTemp == 'b') // Prideti daugiau veiksmo baigimo variaciju
                         break;
 
                     if (namuDarbasRezTemp < 0 || namuDarbasRezTemp > 10)
@@ -124,6 +123,8 @@ int main()
 
                     studentai[studentoIndeksas].namuDarbaiRezs.push_back(namuDarbasRezTemp);
                 }
+
+                studentoIndeksas++;
             }
 
             // Atsitiktinsi rezultatu vedimas
@@ -138,7 +139,7 @@ int main()
             std::cout << "Vardas Pavarde Vidurkis" << std::endl;
             for (int i = 0; i < studentai.size(); i++)
             {
-                std::cout << studentai[i].vardas << " " << studentai[i].pavarde << " " << std::setprecision(2) << std::fixed  << StudentoVidurkis(studentai, i) << std::endl; // KEISTI FUNKCIJOS ARGUMENTUS
+                std::cout << studentai[i].vardas << " " << studentai[i].pavarde << " " << std::setprecision(2) << std::fixed << StudentoVidurkis(studentai, i) << std::endl; // KEISTI FUNKCIJOS ARGUMENTUS
             }
             system("pause");
         }
@@ -146,9 +147,13 @@ int main()
         // Studentu medianos skaiciavimas
         if (veiksmas == 3)
         {
+            std::cout << "Vardas Pavarde Mediana" << std::endl;
+            for (int i = 0; i < studentai.size(); i++)
+            {
+                std::cout << studentai[i].vardas << " " << studentai[i].pavarde << " " << std::setprecision(2) << std::fixed << StudentoMediana(studentai, i) << std::endl; // KEISTI FUNKCIJOS ARGUMENTUS
+            }
+            system("pause");
         }
-
-        studentoIndeksas++;
     }
 }
 
@@ -159,7 +164,7 @@ double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
     {
         suma += studentai[studentoIndeksas].namuDarbaiRezs[i];
     }
-    return (double) ((suma / studentai[studentoIndeksas].namuDarbaiRezs.size()) * 0.4) + (studentai[studentoIndeksas].egzaminasRez * 0.6); // Namu darbu vidurkis * 0.4 + Egzamino rezultatas * 0.6 
+    return (double)((suma / studentai[studentoIndeksas].namuDarbaiRezs.size()) * 0.4) + (studentai[studentoIndeksas].egzaminasRez * 0.6); // Namu darbu vidurkis * 0.4 + Egzamino rezultatas * 0.6
 }
 
 double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas)
