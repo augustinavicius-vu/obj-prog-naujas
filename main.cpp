@@ -4,6 +4,7 @@
 #include <string>
 #include <ctime>
 #include <vector>
+#include <algorithm>
 
 // Pagrindiniai kintamieji
 bool ivestisPagr = true;
@@ -21,6 +22,7 @@ struct Studentas
 // Funkcijos
 double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas);
 double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas);
+int AtsitiktinisSkaicius(std::vector<Studentas> studentai, int studentoIndeksas);
 
 int main()
 {
@@ -127,7 +129,7 @@ int main()
                 studentoIndeksas++;
             }
 
-            // Atsitiktinsi rezultatu vedimas
+            // Atsitiktinis rezultatu vedimas
             if (pasirinkimasRezIvedimas == 2)
             {
             }
@@ -136,6 +138,7 @@ int main()
         // Studentu vidurkio skaiciavimas
         if (veiksmas == 2)
         {
+            system("cls");
             std::cout << "Vardas Pavarde Vidurkis" << std::endl;
             for (int i = 0; i < studentai.size(); i++)
             {
@@ -147,6 +150,7 @@ int main()
         // Studentu medianos skaiciavimas
         if (veiksmas == 3)
         {
+            system("cls");
             std::cout << "Vardas Pavarde Mediana" << std::endl;
             for (int i = 0; i < studentai.size(); i++)
             {
@@ -169,6 +173,19 @@ double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
 
 double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas)
 {
-    double mediana = 0;
-    return mediana;
+    struct Studentas studentas = studentai[studentoIndeksas];
+    std::sort(studentas.namuDarbaiRezs.begin(), studentas.namuDarbaiRezs.end());
+
+    if (studentas.namuDarbaiRezs.size() % 2 != 0)
+    {
+        return (double) studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2];
+    }
+    else
+    {
+        return (double) (studentas.namuDarbaiRezs[(studentas.namuDarbaiRezs.size() - 1) / 2] + studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2]) / 2.0;
+    }
+}
+
+int AtsitiktinisSkaicius(std::vector<Studentas> studentai, int studentoIndeksas) {
+    return 0;
 }
