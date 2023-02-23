@@ -1,10 +1,9 @@
 // Bibliotekos
 #include <iomanip>
 #include <iostream>
-#include <string>
-#include <ctime>
 #include <vector>
 #include <algorithm>
+#include <random>
 
 // Pagrindiniai kintamieji
 bool ivestisPagr = true;
@@ -22,7 +21,7 @@ struct Studentas
 // Funkcijos
 double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas);
 double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas);
-int AtsitiktinisSkaicius(std::vector<Studentas> studentai, int studentoIndeksas);
+int AtsitiktinisSkaicius();
 
 int main()
 {
@@ -132,6 +131,19 @@ int main()
             // Atsitiktinis rezultatu vedimas
             if (pasirinkimasRezIvedimas == 2)
             {
+                system("cls");
+                std::cout << "Iveskite kiek norite NAMU DARBU rezultatu sugeneruoti" << std::endl;
+
+                int namuDarbuRezSk = 0;
+                std::cin >> namuDarbuRezSk;
+
+                studentai[studentoIndeksas].egzaminasRez = AtsitiktinisSkaicius();
+
+                for (int i = 0; i < namuDarbuRezSk; i++) {
+                    studentai[studentoIndeksas].namuDarbaiRezs.push_back(AtsitiktinisSkaicius());
+                    std::cout << AtsitiktinisSkaicius() << std::endl;
+                }
+                system("pause");
             }
         }
 
@@ -178,14 +190,19 @@ double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas)
 
     if (studentas.namuDarbaiRezs.size() % 2 != 0)
     {
-        return (double) studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2];
+        return (double)studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2];
     }
     else
     {
-        return (double) (studentas.namuDarbaiRezs[(studentas.namuDarbaiRezs.size() - 1) / 2] + studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2]) / 2.0;
+        return (double)(studentas.namuDarbaiRezs[(studentas.namuDarbaiRezs.size() - 1) / 2] + studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2]) / 2.0;
     }
 }
 
-int AtsitiktinisSkaicius(std::vector<Studentas> studentai, int studentoIndeksas) {
-    return 0;
+int AtsitiktinisSkaicius()
+{
+    std::random_device seed; // Seed'as generatoriui
+    std::mt19937 generator(seed()); // Mersenne Twister algorythm
+    std::uniform_int_distribution<int> distribution(0, 10); // Random unsigned int'as tranformuojamas i int'a su numatytais reziais
+
+    return distribution(generator);
 }
