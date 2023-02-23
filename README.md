@@ -1,2 +1,2 @@
-# obj-prog
-Objektinio programavimo laboratorinis darbas.
+# OBJEKTINIS PROGRAMAVIMAS I DALIS
+Objektinio programavimo I dalis.
