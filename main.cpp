@@ -62,7 +62,7 @@ int main()
             system("cls");
 
             studentai.push_back(Studentas()); // Sukuriame vietos naujam studentui pagal Studentas struct
-            
+
             std::cout << "Iveskite studento VARDA" << std::endl; // STUDENTO VARDAS
             std::cin >> studentai[studentoIndeksas].vardas;
             system("cls");
@@ -159,7 +159,7 @@ double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
     {
         suma += studentai[studentoIndeksas].namuDarbaiRezs[i];
     }
-    return (double) suma / studentai[studentoIndeksas].namuDarbaiRezs.size();
+    return (double) ((suma / studentai[studentoIndeksas].namuDarbaiRezs.size()) * 0.4) + (studentai[studentoIndeksas].egzaminasRez * 0.6); // Namu darbu vidurkis * 0.4 + Egzamino rezultatas * 0.6 
 }
 
 double StudentoMediana(std::vector<Studentas> studentai, int studentoIndeksas)
