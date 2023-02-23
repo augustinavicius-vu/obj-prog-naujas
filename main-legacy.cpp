@@ -1,11 +1,26 @@
 #include <iostream>
+
+// Funkciju deklaracijos
+void DidintiStudentuMasyva();
+
 bool ivestisPagr = true;
+
+// Studento struktura
+typedef struct Studentas
+{
+    std::string vardas;
+    std::string pavarde;
+    int pazymiai[10];
+};
+
+// Studentu dinaminis masyvas
+struct Studentas *studentai;
+size_t studentaiMasyvoDydis = 100;
 
 int main()
 {
     while (ivestisPagr)
     {
-
         // Veiksmu pasirinkimai - startas
         std::cout << "Prasome pasirinkti veiksma:" << std::endl;
         std::cout << "1. Naujas studentas" << std::endl;
