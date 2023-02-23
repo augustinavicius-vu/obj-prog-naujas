@@ -1,0 +1,5 @@
+# Ignoruoti visus .exe failus
+*.exe
+
+# Ignoruoti VS Code konfiguracinius failus
+.vscode
