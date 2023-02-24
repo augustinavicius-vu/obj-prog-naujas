@@ -41,11 +41,11 @@ int main()
 
         // Veiksmo pasrinikimo logika
         int veiksmas = 0;
-        while (!(std::cin >> veiksmas)) // KEISTI TIKRINIMA
+        while (!(std::cin >> veiksmas)) // KEISTI TIKRINIMA (bloga antra interacija)
         {
             system("cls");
             // Veiksmu pasirinkimai - blogas pasirinkimas
-            std::cout << "Pasirinktas veiksmas neteisingas, galimi pasirinkimai 1, 2, 3:" << std::endl;
+            std::cout << "Prasome pasirinkti veiksma:" << std::endl;
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Studentu vidurkio skaiciavimas" << std::endl;
             std::cout << "3. Studentu medianos skaiciavimas" << std::endl;
