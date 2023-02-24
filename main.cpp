@@ -41,11 +41,11 @@ int main()
 
         // Veiksmo pasrinikimo logika
         int veiksmas = 0;
-        while (!(std::cin >> veiksmas)) // KEISTI TIKRINIMA
+        while (!(std::cin >> veiksmas)) // KEISTI TIKRINIMA (bloga antra interacija)
         {
             system("cls");
             // Veiksmu pasirinkimai - blogas pasirinkimas
-            std::cout << "Pasirinktas veiksmas neteisingas, galimi pasirinkimai 1, 2, 3:" << std::endl;
+            std::cout << "Prasome pasirinkti veiksma:" << std::endl;
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Studentu vidurkio skaiciavimas" << std::endl;
             std::cout << "3. Studentu medianos skaiciavimas" << std::endl;
@@ -124,8 +124,6 @@ int main()
 
                     studentai[studentoIndeksas].namuDarbaiRezs.push_back(namuDarbasRezTemp);
                 }
-
-                studentoIndeksas++;
             }
 
             // Atsitiktinis rezultatu vedimas
@@ -141,10 +139,10 @@ int main()
 
                 for (int i = 0; i < namuDarbuRezSk; i++) {
                     studentai[studentoIndeksas].namuDarbaiRezs.push_back(AtsitiktinisSkaicius());
-                    std::cout << AtsitiktinisSkaicius() << std::endl;
                 }
-                system("pause");
             }
+
+            studentoIndeksas++;
         }
 
         // Studentu vidurkio skaiciavimas
@@ -176,7 +174,7 @@ int main()
 double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
 {
     int suma = 0;
-    for (int i = 0; i < studentai[studentoIndeksas].namuDarbaiRezs.size(); i++)
+    for (int i = 0; i < studentai[studentoIndeksas].namuDarbaiRezs.size(); i++) // auto &studentas:studentai
     {
         suma += studentai[studentoIndeksas].namuDarbaiRezs[i];
     }
