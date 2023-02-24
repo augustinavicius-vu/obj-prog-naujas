@@ -124,8 +124,6 @@ int main()
 
                     studentai[studentoIndeksas].namuDarbaiRezs.push_back(namuDarbasRezTemp);
                 }
-
-                studentoIndeksas++;
             }
 
             // Atsitiktinis rezultatu vedimas
@@ -141,10 +139,10 @@ int main()
 
                 for (int i = 0; i < namuDarbuRezSk; i++) {
                     studentai[studentoIndeksas].namuDarbaiRezs.push_back(AtsitiktinisSkaicius());
-                    std::cout << AtsitiktinisSkaicius() << std::endl;
                 }
-                system("pause");
             }
+
+            studentoIndeksas++;
         }
 
         // Studentu vidurkio skaiciavimas
@@ -176,7 +174,7 @@ int main()
 double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
 {
     int suma = 0;
-    for (int i = 0; i < studentai[studentoIndeksas].namuDarbaiRezs.size(); i++)
+    for (int i = 0; i < studentai[studentoIndeksas].namuDarbaiRezs.size(); i++) // auto &studentas:studentai
     {
         suma += studentai[studentoIndeksas].namuDarbaiRezs[i];
     }
