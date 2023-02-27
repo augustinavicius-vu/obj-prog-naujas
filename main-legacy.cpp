@@ -37,7 +37,12 @@ int main()
     studentai = (Studentas *)calloc(1, sizeof(Studentas));
 
     Ivestis();
-    // Ivestis();
+
+    for (int i = 0; i < studentoIndeksas; i++)
+    {
+        free(studentai[i].namuDarbaiRez);
+    }
+    free(studentai);
 
     return 0;
 }
@@ -202,6 +207,7 @@ void Ivestis()
             }
 
             studentoIndeksas++;
+            continue;
         }
 
         // Vidurkis
@@ -215,6 +221,7 @@ void Ivestis()
                 std::cout << studentai[i].vardas << std::setw(9) << studentai[i].pavarde << std::setw(20) << std::fixed << std::setprecision(2) << StudentoVidurkis(i) << std::endl;
             }
             system("pause");
+            continue;
         }
 
         // Mediana
@@ -228,6 +235,7 @@ void Ivestis()
                 std::cout << studentai[i].vardas << std::setw(9) << studentai[i].pavarde << std::setw(20) << std::fixed << std::setprecision(2) << StudentoMediana(i) << std::endl;
             }
             system("pause");
+            continue;
         }
     }
 }
