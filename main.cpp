@@ -36,8 +36,8 @@ int main()
         // Veiksmu pasirinkimai - startas
         std::cout << "Prasome pasirinkti veiksma:" << std::endl;
         std::cout << "1. Naujas studentas" << std::endl;
-        std::cout << "2. Studentu vidurkio skaiciavimas" << std::endl;
-        std::cout << "3. Studentu medianos skaiciavimas" << std::endl;
+        std::cout << "2. Studentu vidurkio skaiciavimas" << std::endl; // Nelogiska
+        std::cout << "3. Studentu medianos skaiciavimas" << std::endl; // Nelogiska
 
         // Veiksmo pasrinikimo logika
         int veiksmas = 0;
@@ -169,6 +169,8 @@ int main()
             system("pause");
         }
     }
+
+    return 0;
 }
 
 double StudentoVidurkis(std::vector<Studentas> studentai, int studentoIndeksas)
