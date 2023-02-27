@@ -24,8 +24,9 @@ int studentoIndeksas = 0;
 void Ivestis();
 void IvestiesValymas();
 double StudentoVidurkis(int studentoIndeksas);
+double StudentoMediana(int studentoIndeksas);
 int AtsitiktinisSkaicius();
-void RikiuotiMasyva(int studentoIndeksas, Studentas *studentai);
+void RikiuotiMasyva(int studentoIndeksas);
 
 int main()
 {
@@ -220,12 +221,11 @@ void Ivestis()
         if (pasirinkimas == 3)
         {
             system("cls");
-            std::cout << "Vardas" << std::setw(10) << "Pavarde" << std::setw(30) << "Galutinis Vidurkis" << std::endl;
+            std::cout << "Vardas" << std::setw(10) << "Pavarde" << std::setw(30) << "Galutinė Mediana" << std::endl;
             std::cout << "----------------------------------------------------------------------" << std::endl;
             for (int i = 0; i < studentoIndeksas; i++)
             {
-                //std::cout << studentai[i].vardas << std::setw(9) << studentai[i].pavarde << std::setw(20) << std::fixed << std::setprecision(2) << StudentoVidurkis(i) << std::endl;
-                RikiuotiMasyva(studentoIndeksas, studentai);
+                std::cout << studentai[i].vardas << std::setw(9) << studentai[i].pavarde << std::setw(20) << std::fixed << std::setprecision(2) << StudentoMediana(i) << std::endl;
             }
             system("pause");
         }
@@ -260,22 +260,25 @@ double StudentoVidurkis(int studentoIndeksas)
 double StudentoMediana(int studentoIndeksas)
 {
     struct Studentas studentas = studentai[studentoIndeksas];
-
-    if (studentas.namuDarbaiRezs.size() % 2 != 0)
+    RikiuotiMasyva(studentoIndeksas);
+    if (studentai[studentoIndeksas].namuDarbuSk % 2 != 0)
     {
-        return (double)studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2];
+        return (double)studentas.namuDarbaiRez[studentai[studentoIndeksas].namuDarbuSk / 2];
     }
     else
     {
-        return (double)(studentas.namuDarbaiRezs[(studentas.namuDarbaiRezs.size() - 1) / 2] + studentas.namuDarbaiRezs[studentas.namuDarbaiRezs.size() / 2]) / 2.0;
+        return (double)(studentas.namuDarbaiRez[(studentai[studentoIndeksas].namuDarbuSk - 1) / 2] + studentas.namuDarbaiRez[studentai[studentoIndeksas].namuDarbuSk / 2]) / 2.0;
     }
 }
 
-void RikiuotiMasyva(int studentoIndeksas, Studentas *studentai)
+void RikiuotiMasyva(int studentoIndeksas)
 {
-    for (int i = 0; i < studentai[studentoIndeksas].namuDarbuSk; i++)
+    for (int i = 0; i < studentai[studentoIndeksas].namuDarbuSk - 1; i++)
     {
-        std::cout << studentai[studentoIndeksas].namuDarbaiRez[i] << std::endl;
+        for (int j = 0; j < studentai[studentoIndeksas].namuDarbuSk - i - 1; j++)
+        {
+            if (studentai[studentoIndeksas].namuDarbaiRez[j] > studentai[studentoIndeksas].namuDarbaiRez[i])
+                std::swap(studentai[studentoIndeksas].namuDarbaiRez[j], studentai[studentoIndeksas].namuDarbaiRez[j + 1]);
+        }
     }
 }
-
