@@ -9,7 +9,4 @@ void NaujasStudentas(int studentoIndeksas, VStudentas &studentai, std::string va
     studentai[studentoIndeksas].pavarde = pavarde;
     studentai[studentoIndeksas].egzaminasRez = egzaminasRez;
     studentai[studentoIndeksas].namuDarbaiRez = namuDarbaiRez;
-
-    std::cout << "Complete!" << std::endl;
-    system("pause");
 }

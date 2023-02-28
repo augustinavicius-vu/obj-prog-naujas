@@ -1,4 +1,4 @@
-#include <limits.h>
+#include <limits.h> // INT_MAX
 
 void ValytiIvesti()
 {

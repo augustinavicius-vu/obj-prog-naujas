@@ -1,8 +1,7 @@
 #include <iostream>
 
-#include "../tools/clearcin.h"
-
-#include "menu-new-stud.h"
+#include "../tools/clearcin.h" // ValytiIvesti()
+#include "menu-new-stud.h" // Naujo studento meniu
 
 void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 {

@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 
-// #include "../tools/clearcin.h"
-#include "../tools/newstud.h"
+#include "../tools/newstud.h" // Naujo studento kūrimas
 
 void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
 {
