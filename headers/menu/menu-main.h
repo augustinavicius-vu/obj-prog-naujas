@@ -2,6 +2,8 @@
 
 #include "../tools/clearcin.h" // ValytiIvesti()
 #include "menu-new-stud.h" // Naujo studento meniu
+#include "menu-stud-mean.h" // Studento vidurkis meniu
+#include "menu-stud-medi.h" // Studento mediana meniu
 
 void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 {
@@ -67,17 +69,10 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 
         if (pasirinkimas == 1)
             PasirinkimasNaujasStudentas(studentoIndeksas, studentai);
-            /*
-        if (pasirinkimas == 2)
-            PasirinkimasGeneruotiStudentus();
-        if (pasirinkimas == 3)
-            PasirinkimasNuskaitytiFaila();
-        if (pasirinkimas == 4)
-            PasirinkimasSkaiciuotiVidurki();
-        if (pasirinkimas == 5)
-            PasirinkimasSkaiciuotiMediana();
-        if (pasirinkimas == 6)
-            PasirinkimasSkaiciuotiAbu();
-            */
+        //if (pasirinkimas == 2) PasirinkimasGeneruotiStudentus();
+        //if (pasirinkimas == 3) PasirinkimasNuskaitytiFaila();
+        if (pasirinkimas == 4) PasirinkimasSkaiciuotiVidurki(studentai);
+        if (pasirinkimas == 5) PasirinkimasSkaiciuotiMediana(studentai);
+        //if (pasirinkimas == 6) PasirinkimasSkaiciuotiAbu();
     }
 }
