@@ -2,19 +2,23 @@
 #include <vector>
 
 #include "../tools/newstud.h" // Naujo studento kūrimas
+#include "../tools/randnum.h" // AtsitiktinisSkaicius()
 
 void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
 {
+    // STUDENTO VARDAS
     system("cls");
     std::string tempVardas;
     std::cout << "Įveskite studento VARDĄ" << std::endl;
     std::cin >> tempVardas;
 
+    // STUDENTO PAVARDE
     system("cls");
     std::string tempPavarde;
     std::cout << "Įveskite studento PAVARDĘ" << std::endl;
     std::cin >> tempPavarde;
 
+    // STUDENTO REZULTATAI
     system("cls");
     std::cout << "Ar norite studento rezultatus įvesti RANKINIU būdu ar sugeneruoti ATSITIKTINIU (1-2):" << std::endl;
     std::cout << "1. Rankiniu" << std::endl;
@@ -38,12 +42,15 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
         break;
     }
 
+    // STUDENTO REZULTATAS - KINTAMIEJI
+    int tempEgzaminasRez;
+    std::vector<int> tempNamuDarbaiRez;
+
+    // STUDENTO REZULTATAS - RANKINIS BŪDAS
     if (pasirinkimas == 1)
     {
         system("cls");
         std::cout << "Įveskite studento EGZAMINO rezultatą" << std::endl;
-
-        int tempEgzaminasRez;
         while (true)
         {
             std::cin >> tempEgzaminasRez;
@@ -61,7 +68,6 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
         system("cls");
         std::cout << "Įveskite studento NAMŲ DARBŲ rezultatus. Norint baigti rezultatų įvedimą, įveskite „-1“" << std::endl;
 
-        std::vector<int> tempNamuDarbaiRez;
         int tempNamuDarbasRez;
         while (true)
         {
@@ -80,21 +86,49 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
 
             tempNamuDarbaiRez.push_back(tempNamuDarbasRez);
         }
+    }
 
-        try
+    // STUDENTO REZULTATAS - ATSITIKTININS BŪDAS
+    if (pasirinkimas == 2)
+    {
+        tempEgzaminasRez = AtsitiktinisSkaicius(0, 10);
+
+        system("cls");
+        std::cout << "Įveskite kiek NAMŲ DARBŲ rezultatų norite sugeneruoti (1 - 100)" << std::endl;
+
+        int namuDarbuSk;
+        while(true)
         {
-            NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
-            studentoIndeksas++;
+            std::cin >> namuDarbuSk;
+
+            if (!(std::cin) || (namuDarbuSk < 1 || namuDarbuSk > 100))
+            {
+                system("cls");
+                std::cout << "Bloga reikšmė! NAMŲ DARBŲ SKAIČIAUS reikšmės yra NUO 1 IKI 100" << std::endl;
+
+                ValytiIvesti();
+                continue;
+            }
+
+            break;
         }
-        catch (const std::exception &e)
+
+        for (int i = 0; i < namuDarbuSk; i++)
         {
-            system("cls");
-            std::cout << "Naujo studento įrašymo operacija nepavyko! Klaidos pranešimas:" << std::endl;
-            std::cerr << e.what() << '\n';
+            tempNamuDarbaiRez.push_back(AtsitiktinisSkaicius(0, 10));
         }
     }
 
-    if (pasirinkimas == 2)
+    // STUDENTO KŪRIMAS
+    try
     {
+        NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
+        studentoIndeksas++;
+    }
+    catch (const std::exception &e)
+    {
+        system("cls");
+        std::cout << "Naujo studento įrašymo operacija nepavyko! Klaidos pranešimas:" << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 }
