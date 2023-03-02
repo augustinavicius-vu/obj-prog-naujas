@@ -21,7 +21,7 @@ void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
     }
 
     std::ifstream failas;
-    failas.open("./test/t1000000.txt");
+    failas.open("./test/t10000.txt");
     if (!failas)
     {
         std::cout << "Nerastas failas!" << std::endl;
