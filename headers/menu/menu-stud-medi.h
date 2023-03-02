@@ -17,7 +17,7 @@ void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
     {
         std::cout << std::setw(20) << std::left << studentas.vardas;
         std::cout << std::setw(20) << std::left << studentas.pavarde;
-        std::cout << StudentoMediana(studentas) << std::endl;
+        std::cout << std::setprecision(2) << std::fixed <<StudentoMediana(studentas) << std::endl;
     }
 
     system("pause");

@@ -18,7 +18,7 @@ void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
     {
         std::cout << std::setw(20) << std::left << studentas.vardas;
         std::cout << std::setw(20) << std::left << studentas.pavarde;
-        std::cout << StudentoVidurkis(studentas)  << std::endl;
+        std::cout << std::setprecision(2) << std::fixed << StudentoVidurkis(studentas)  << std::endl;
     }
 
     system("pause");
