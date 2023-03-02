@@ -123,12 +123,12 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     try
     {
         NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
-        studentoIndeksas++;
     }
     catch (const std::exception &e)
     {
         system("cls");
         std::cout << "Naujo studento įrašymo operacija nepavyko! Klaidos pranešimas:" << std::endl;
         std::cerr << e.what() << std::endl;
+        system("pause");
     }
 }

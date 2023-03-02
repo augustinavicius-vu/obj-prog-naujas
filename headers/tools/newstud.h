@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-void NaujasStudentas(int studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
+void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
 {
     studentai.push_back(Studentas());
 
@@ -9,4 +9,6 @@ void NaujasStudentas(int studentoIndeksas, VStudentas &studentai, std::string va
     studentai[studentoIndeksas].pavarde = pavarde;
     studentai[studentoIndeksas].egzaminasRez = egzaminasRez;
     studentai[studentoIndeksas].namuDarbaiRez = namuDarbaiRez;
+
+    studentoIndeksas++;
 }
