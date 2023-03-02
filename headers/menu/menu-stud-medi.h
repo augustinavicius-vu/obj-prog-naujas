@@ -11,6 +11,8 @@ void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
     std::cout << "Galutinė med." << std::endl;
     std::cout << "------------------------------------------------------" << std::endl;
 
+    RikiuotiStudentus(studentai);
+
     for (auto &studentas : studentai)
     {
         std::cout << std::setw(20) << std::left << studentas.vardas;

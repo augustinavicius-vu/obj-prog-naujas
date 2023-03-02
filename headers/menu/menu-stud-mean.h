@@ -3,6 +3,7 @@
 
 #include "../tools/calcmean.h"
 
+
 void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
 {
     system("cls");
@@ -10,6 +11,8 @@ void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
     std::cout << std::setw(20) << std::left << "Pavardė";
     std::cout << "Galutinis vid." << std::endl;
     std::cout << "------------------------------------------------------" << std::endl;
+
+    RikiuotiStudentus(studentai);
 
     for (auto &studentas : studentai)
     {

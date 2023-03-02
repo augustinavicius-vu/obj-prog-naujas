@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "../tools/clearcin.h" // ValytiIvesti()
+#include "../tools/sortstud.h"
 #include "menu-new-stud.h" // Naujo studento meniu
 #include "menu-stud-mean.h" // Studento vidurkis meniu
 #include "menu-stud-medi.h" // Studento mediana meniu
