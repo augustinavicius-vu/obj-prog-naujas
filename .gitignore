@@ -3,3 +3,7 @@
 
 # Ignoruoti VS Code konfiguracinius failus
 .vscode
+
+# Ignoruoti output ir .o failus
+*.o
+output

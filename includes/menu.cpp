@@ -11,19 +11,19 @@
 void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
 {
     // STUDENTO VARDAS
-    system("cls");
+    ValytiIsvesti();
     std::string tempVardas;
     std::cout << "Įveskite studento VARDĄ" << std::endl;
     std::cin >> tempVardas;
 
     // STUDENTO PAVARDE
-    system("cls");
+    ValytiIsvesti();
     std::string tempPavarde;
     std::cout << "Įveskite studento PAVARDĘ" << std::endl;
     std::cin >> tempPavarde;
 
     // STUDENTO REZULTATAI
-    system("cls");
+    ValytiIsvesti();
     std::cout << "Ar norite studento rezultatus įvesti RANKINIU būdu ar sugeneruoti ATSITIKTINIU (1-2):" << std::endl;
     std::cout << "1. Rankiniu" << std::endl;
     std::cout << "2. Atsitiktiniu" << std::endl;
@@ -34,7 +34,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
         std::cin >> pasirinkimas;
         if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2))
         {
-            system("cls");
+            ValytiIsvesti();
             std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-2):" << std::endl;
             std::cout << "1. Rankiniu" << std::endl;
             std::cout << "2. Atsitiktiniu" << std::endl;
@@ -53,7 +53,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     // STUDENTO REZULTATAS - RANKINIS BŪDAS
     if (pasirinkimas == 1)
     {
-        system("cls");
+        ValytiIsvesti();
         std::cout << "Įveskite studento EGZAMINO rezultatą" << std::endl;
         while (true)
         {
@@ -69,7 +69,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
             break;
         }
 
-        system("cls");
+        ValytiIsvesti();
         std::cout << "Įveskite studento NAMŲ DARBŲ rezultatus. Norint baigti rezultatų įvedimą, įveskite „-1“" << std::endl;
 
         int tempNamuDarbasRez;
@@ -97,7 +97,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     {
         tempEgzaminasRez = AtsitiktinisSkaicius(0, 10);
 
-        system("cls");
+        ValytiIsvesti();
         std::cout << "Įveskite kiek NAMŲ DARBŲ rezultatų norite sugeneruoti (1 - 100)" << std::endl;
 
         int namuDarbuSk;
@@ -107,7 +107,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
 
             if (!(std::cin) || (namuDarbuSk < 1 || namuDarbuSk > 100))
             {
-                system("cls");
+                ValytiIsvesti();
                 std::cout << "Bloga reikšmė! NAMŲ DARBŲ SKAIČIAUS reikšmės yra NUO 1 IKI 100" << std::endl;
 
                 ValytiIvesti();
@@ -130,16 +130,16 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     }
     catch (const std::exception &e)
     {
-        system("cls");
+        ValytiIsvesti();
         std::cout << "Naujo studento įrašymo operacija nepavyko! Klaidos pranešimas:" << std::endl;
         std::cerr << e.what() << std::endl;
-        system("pause");
+        Pauze();
     }
 }
 
 void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
 {
-    system("cls");
+    ValytiIsvesti();
     std::cout << "Įveskite NAMŲ DARBŲ skaičių (1 - 100)" << std::endl;
 
     int namuDarbuSk;
@@ -161,7 +161,7 @@ void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
     if (!failas)
     {
         std::cout << "Nerastas failas!" << std::endl;
-        system("pause");
+        Pauze();
     }
 
     std::string tekstas;
@@ -213,7 +213,7 @@ void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
 
 void PasirinkimasSkaiciuotiAbu(VStudentas &studentai)
 {
-    system("cls");
+    ValytiIsvesti();
     std::cout << std::setw(20) << std::left << "Vardas";
     std::cout << std::setw(20) << std::left << "Pavardė";
     std::cout << std::setw(20) << std::left << "Galutinis vid.";
@@ -230,12 +230,12 @@ void PasirinkimasSkaiciuotiAbu(VStudentas &studentai)
         std::cout << std::setprecision(2) << std::fixed <<StudentoMediana(studentas) << std::endl;
     }
 
-    system("pause");
+    Pauze();
 }
 
 void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
 {
-    system("cls");
+    ValytiIsvesti();
     std::cout << std::setw(20) << std::left << "Vardas";
     std::cout << std::setw(20) << std::left << "Pavardė";
     std::cout << "Galutinis vid." << std::endl;
@@ -250,12 +250,12 @@ void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
         std::cout << std::setprecision(2) << std::fixed << StudentoVidurkis(studentas)  << std::endl;
     }
 
-    system("pause");
+    Pauze();
 }
 
 void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
 {
-    system("cls");
+    ValytiIsvesti();
     std::cout << std::setw(20) << std::left << "Vardas";
     std::cout << std::setw(20) << std::left << "Pavardė";
     std::cout << "Galutinė med." << std::endl;
@@ -270,14 +270,14 @@ void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
         std::cout << std::setprecision(2) << std::fixed <<StudentoMediana(studentas) << std::endl;
     }
 
-    system("pause");
+    Pauze();
 }
 
 void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 {
     while (true)
     {
-        system("cls");
+        ValytiIsvesti();
         if (studentoIndeksas < 1)
         {
             std::cout << "Pasirinkite veiksmą (1-3):" << std::endl;
@@ -306,7 +306,7 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             {
                 if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3))
                 {
-                    system("cls");
+                    ValytiIsvesti();
                     std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-3):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;
@@ -319,7 +319,7 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             {
                 if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4 && pasirinkimas != 5 && pasirinkimas != 6))
                 {
-                    system("cls");
+                    ValytiIsvesti();
                     std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-5):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;

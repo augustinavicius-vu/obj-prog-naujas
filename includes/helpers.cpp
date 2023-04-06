@@ -11,6 +11,24 @@ void ValytiIvesti()
     std::cin.ignore(INT_MAX, '\n');
 }
 
+void ValytiIsvesti()
+{
+    #if defined(WIN32) || defined(_WIN32) // Windows
+    system("cls");
+    #else // Viskas kita (siuo atveju Linux)
+    system("clear");
+    #endif
+}
+
+void Pauze()
+{
+    #if defined(WIN32) || defined(_WIN32) // Windows
+    system("pause");
+    #else // Viskas kita (siuo atveju Linux)
+    system("sleep 1h");
+    #endif
+}
+
 void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
 {
     studentai.push_back(Studentas());
