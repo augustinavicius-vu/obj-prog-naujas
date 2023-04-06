@@ -7,6 +7,7 @@
 // Pagrindiniai kintamieji
 bool ivestisPagr = true;
 int studentoIndeksas = 0;
+
 #include "typedefs.h"
 #include "./headers/menu/menu-main.h"
 
