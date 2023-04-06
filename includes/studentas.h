@@ -1,4 +1,6 @@
-#include <iostream>
+#pragma once
+
+#include <string>
 #include <vector>
 
 struct Studentas
@@ -8,3 +10,5 @@ struct Studentas
     int egzaminasRez;
     std::vector<int> namuDarbaiRez;
 };
+
+typedef std::vector<Studentas> VStudentas;
