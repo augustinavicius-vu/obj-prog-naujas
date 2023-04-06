@@ -4,11 +4,6 @@
 #include <vector>
 #include <algorithm>
 
-#include <limits.h>
-#include <windows.h>
-
-#pragma execution_character_set("utf-8");
-
 // Pagrindiniai kintamieji
 bool ivestisPagr = true;
 int studentoIndeksas = 0;
