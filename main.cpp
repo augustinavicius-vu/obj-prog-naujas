@@ -1,21 +1,17 @@
-// Bibliotekos
-#include <iomanip>
-#include <iostream>
 #include <vector>
-#include <algorithm>
+#include <iostream>
+
+#include "./includes/studentas.h"
+#include "./includes/calculations.h"
+#include "./includes/helpers.h"
+#include "./includes/menu.h"
 
 // Pagrindiniai kintamieji
 bool ivestisPagr = true;
 int studentoIndeksas = 0;
 
-#include "typedefs.h"
-#include "./headers/menu/menu-main.h"
-
 int main()
 {
-    // Nustatyti konsolę į lietuviškas raides palaikantį output'ą
-    SetConsoleOutputCP(65001);
-
     // Studentų vektoriaus inicializacija
     VStudentas studentai;
 
