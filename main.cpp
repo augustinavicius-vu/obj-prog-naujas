@@ -17,6 +17,5 @@ int main()
 
     // Pradinė funkcija (Pagrindinis meniu, atsakingas už programos veikimą)
     Ivestis(studentoIndeksas, studentai);
-
     return 0;
 }
