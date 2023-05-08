@@ -13,3 +13,5 @@ void Pauze();
 // Pagalbinės funkcijos
 void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez);
 void RikiuotiStudentus(VStudentas &studentai);
+
+void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);

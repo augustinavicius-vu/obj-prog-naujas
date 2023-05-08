@@ -1,8 +1,11 @@
 #include <iostream>
 #include <climits>
 #include <algorithm>
+#include <fstream>
+#include <string>
 
 #include "studentas.h"
+#include "calculations.h"
 
 // Valyti Naudotojo Įvestį
 void ValytiIvesti()
@@ -57,4 +60,15 @@ bool RikiavimoTipas(const Studentas &studentasA, const Studentas &studentasB)
 void RikiuotiStudentus(VStudentas &studentai)
 {
     std::sort(studentai.begin(), studentai.end(), RikiavimoTipas);
+}
+
+void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta) 
+{
+    std::ofstream failas(vieta);
+
+    for (int i = 0; i < studentuSk; i++) {
+        failas << AtsitiktinisSkaicius(1, 10);
+    }
+
+    failas.close();
 }

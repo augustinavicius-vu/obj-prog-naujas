@@ -137,6 +137,52 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     }
 }
 
+void PasirinkimasGeneruotiFaila()
+{
+    ValytiIsvesti();
+    std::cout << "Įveskite kiek studentų norite sugeneruoti" << std::endl;
+    int studentuSk;
+    while (true)
+    {
+        std::cin >> studentuSk;
+        if (!(std::cin) || (studentuSk < 1 || studentuSk > 2147483647))
+        {
+            std::cout << "Bloga reikšmė! STUDENTŲ KIEKIO SKAIČIAUS reikšmės yra NUO 1 IKI 2147483647" << std::endl;
+            ValytiIvesti();
+            continue;
+        }
+
+        break;
+    }
+
+    ValytiIsvesti();
+    std::cout << "Įveskite kiek namų darbų pažymių studentai turės" << std::endl;
+    int namuDarbuSk;
+    while (true)
+    {
+        std::cin >> namuDarbuSk;
+        if (!(std::cin) || (namuDarbuSk < 1 || namuDarbuSk > 2147483647))
+        {
+            std::cout << "Bloga reikšmė! NAMŲ DARBŲ SKAIČIAUS reikšmės yra NUO 1 IKI 2147483647" << std::endl;
+            ValytiIvesti();
+            continue;
+        }
+
+        break;
+    }
+
+    ValytiIsvesti();
+    std::cout << "Įveskite kur norite išsaugoti šį failą" << std::endl;
+
+    std::string vieta;
+    std::cin >> vieta;
+
+    ValytiIsvesti();
+    std::cout << "Pradedamas generuoti failas" << std::endl;
+
+    GeneruotiFaila(studentuSk, namuDarbuSk, vieta);
+}
+
 void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
 {
     ValytiIsvesti();
@@ -284,6 +330,7 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Generuoti studentus" << std::endl;
             std::cout << "3. Nuskaityti studentų failą" << std::endl;
+            std::cout << "4. Generuoti studentų failą" << std::endl;
         }
         else
         {
@@ -291,9 +338,10 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Generuoti studentus" << std::endl;
             std::cout << "3. Nuskaityti studentų failą" << std::endl;
-            std::cout << "4. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-            std::cout << "5. Skaičiuoti studentų gaultinę medianą" << std::endl;
-            std::cout << "6. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
+            std::cout << "4. Generuoti studentų failą" << std::endl;
+            std::cout << "5. Skaičiuoti studentų galutinį vidurkį" << std::endl;
+            std::cout << "6. Skaičiuoti studentų gaultinę medianą" << std::endl;
+            std::cout << "7. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
         }
 
         int pasirinkimas;
@@ -304,29 +352,31 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             // Programos pradžia
             if (studentoIndeksas < 1)
             {
-                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3))
+                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4))
                 {
                     ValytiIsvesti();
-                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-3):" << std::endl;
+                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-4):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;
                     std::cout << "3. Nuskaityti studentų failą" << std::endl;
+                    std::cout << "4. Generuoti studentų failą" << std::endl;
                     ValytiIvesti();
                     continue;
                 }
             }
             else // Programa tęsias
             {
-                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4 && pasirinkimas != 5 && pasirinkimas != 6))
+                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4 && pasirinkimas != 5 && pasirinkimas != 6 && pasirinkimas != 7))
                 {
                     ValytiIsvesti();
-                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-5):" << std::endl;
+                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-7):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;
                     std::cout << "3. Nuskaityti studentų failą" << std::endl;
-                    std::cout << "4. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-                    std::cout << "5. Skaičiuoti studentų gaultinę medianą" << std::endl;
-                    std::cout << "6. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
+                    std::cout << "4. Generuoti studentų failą" << std::endl;
+                    std::cout << "5. Skaičiuoti studentų galutinį vidurkį" << std::endl;
+                    std::cout << "6. Skaičiuoti studentų gaultinę medianą" << std::endl;
+                    std::cout << "7. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
                     ValytiIvesti();
                     continue;
                 }
@@ -335,12 +385,12 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             break;
         }
 
-        if (pasirinkimas == 1)
-            PasirinkimasNaujasStudentas(studentoIndeksas, studentai);
+        if (pasirinkimas == 1) PasirinkimasNaujasStudentas(studentoIndeksas, studentai);
         //if (pasirinkimas == 2) PasirinkimasGeneruotiStudentus();
-        if (pasirinkimas == 3) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
-        if (pasirinkimas == 4) PasirinkimasSkaiciuotiVidurki(studentai);
-        if (pasirinkimas == 5) PasirinkimasSkaiciuotiMediana(studentai);
-        if (pasirinkimas == 6) PasirinkimasSkaiciuotiAbu(studentai);
+        if (pasirinkimas == 3) PasirinkimasGeneruotiFaila();
+        if (pasirinkimas == 4) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
+        if (pasirinkimas == 5) PasirinkimasSkaiciuotiVidurki(studentai);
+        if (pasirinkimas == 6) PasirinkimasSkaiciuotiMediana(studentai);
+        if (pasirinkimas == 7) PasirinkimasSkaiciuotiAbu(studentai);
     }
 }
