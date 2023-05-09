@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <fstream>
 #include <string>
+#include <chrono>
 
 #include "studentas.h"
 #include "calculations.h"
@@ -82,4 +83,20 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
     }
         
     failas.close();
+}
+
+void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta)
+{
+    std::cout << "Pradedama programos spartos analizė" << std::endl;
+
+    auto startGen = std::chrono::high_resolution_clock::now();
+    GeneruotiFaila(irasuSk, namuDarbuSk, vieta);
+    auto endGen = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffGen = endGen - startGen;
+    std:: cout << irasuSk << " įrašų generavimas ir išvedimas į failą truko: " << diffGen.count() << std::endl;
+
+    Pauze();
+
+
+
 }
