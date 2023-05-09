@@ -7,3 +7,6 @@
 # Ignoruoti output ir .o failus
 *.o
 output
+
+# Ignoruoti testinius failus
+test.txt
