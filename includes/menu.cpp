@@ -387,8 +387,8 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 
         if (pasirinkimas == 1) PasirinkimasNaujasStudentas(studentoIndeksas, studentai);
         //if (pasirinkimas == 2) PasirinkimasGeneruotiStudentus();
-        if (pasirinkimas == 3) PasirinkimasGeneruotiFaila();
-        if (pasirinkimas == 4) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
+        if (pasirinkimas == 3) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
+        if (pasirinkimas == 4) PasirinkimasGeneruotiFaila();
         if (pasirinkimas == 5) PasirinkimasSkaiciuotiVidurki(studentai);
         if (pasirinkimas == 6) PasirinkimasSkaiciuotiMediana(studentai);
         if (pasirinkimas == 7) PasirinkimasSkaiciuotiAbu(studentai);

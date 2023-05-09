@@ -65,10 +65,21 @@ void RikiuotiStudentus(VStudentas &studentai)
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta) 
 {
     std::ofstream failas(vieta);
+    failas << "Vardas Pavardė ";
+    for (int i = 0; i < namuDarbuSk; i++)
+    {
+        failas << "ND" << i + 1 << " ";
+    }
+    failas << "Egzaminas\n";
 
     for (int i = 0; i < studentuSk; i++) {
-        failas << AtsitiktinisSkaicius(1, 10);
+        failas << "Vardas" << i + 1 << " Pavardė" << i + 1;
+        for (int j = 0; j < namuDarbuSk; j++)
+        {
+            failas << " " << AtsitiktinisSkaicius(1, 10) << " "; // Namų darbai
+        }
+        failas << AtsitiktinisSkaicius(1, 10) << "\n"; // Egzaminas
     }
-
+        
     failas.close();
 }
