@@ -85,7 +85,7 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
     failas.close();
 }
 
-void NuskaityiFaila(VStudentas studentai, std::string vieta)
+void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndeksas)
 {
     std::ifstream failas(vieta);
 
@@ -129,15 +129,11 @@ void NuskaityiFaila(VStudentas studentai, std::string vieta)
             if (laukelis > 1 + namuDarbuSk)
             {
                 tempEgzaminasRez = std::stoi(tekstas);
-                //NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
+                NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
 
                 laukelis = -1;
                 continue;
             }
-
-            
-
-
         } else {
             if (tekstas == "Egzaminas")
             {
@@ -152,7 +148,7 @@ void NuskaityiFaila(VStudentas studentai, std::string vieta)
     failas.close();
 }
 
-void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta)
+void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai)
 {
     std::cout << "Pradedama programos spartos analizė" << std::endl;
 
@@ -164,9 +160,8 @@ void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta)
     std::cout << irasuSk << " įrašų generavimas ir išvedimas į failą truko: " << diffGen.count() << std::endl;
 
     // Failo nuskaitymas
-    VStudentas studentai;
     auto startRead = std::chrono::high_resolution_clock::now();
-    NuskaityiFaila(studentai, vieta);
+    NuskaityiFaila(studentai, vieta, studentoIndeksas);
     auto endRead = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffRead = endRead - startRead;
     std::cout << irasuSk << " įrašų nuskaitymas truko: " << diffRead.count() << std::endl;

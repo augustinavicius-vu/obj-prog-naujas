@@ -15,4 +15,4 @@ void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string v
 void RikiuotiStudentus(VStudentas &studentai);
 
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
-void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta);
+void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai);

@@ -319,7 +319,7 @@ void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
     Pauze();
 }
 
-void PasirinkimasGreicioAnalize()
+void PasirinkimasGreicioAnalize(int &studentoIndeksas, VStudentas &studentai)
 {
     // Įrašų kiekis
     ValytiIsvesti();
@@ -364,7 +364,7 @@ void PasirinkimasGreicioAnalize()
 
     ValytiIsvesti();
     // Pradėti spartos testavimą
-    TestuotiSparta(irasuSk, namuDarbuSk, vieta);
+    TestuotiSparta(irasuSk, namuDarbuSk, vieta, studentoIndeksas, studentai);
 }
 
 void Ivestis(int &studentoIndeksas, VStudentas &studentai)
@@ -390,7 +390,7 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             std::cout << "4. Generuoti studentų failą" << std::endl;
             std::cout << "5. Programos veikimo greičio analizė" << std::endl;
             std::cout << "6. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-            std::cout << "7. Skaičiuoti studentų gaultinę medianą" << std::endl;
+            std::cout << "7. Skaičiuoti studentų galutinę medianą" << std::endl;
             std::cout << "8. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
         }
 
@@ -427,7 +427,7 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
                     std::cout << "4. Generuoti studentų failą" << std::endl;
                     std::cout << "5. Programos veikimo greičio analizė" << std::endl;
                     std::cout << "6. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-                    std::cout << "7. Skaičiuoti studentų gaultinę medianą" << std::endl;
+                    std::cout << "7. Skaičiuoti studentų galutinę medianą" << std::endl;
                     std::cout << "8. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
                     ValytiIvesti();
                     continue;
@@ -441,9 +441,9 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
         //if (pasirinkimas == 2) PasirinkimasGeneruotiStudentus();
         if (pasirinkimas == 3) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
         if (pasirinkimas == 4) PasirinkimasGeneruotiFaila();
-        if (pasirinkimas == 5) PasirinkimasGreicioAnalize();
+        if (pasirinkimas == 5) PasirinkimasGreicioAnalize(studentoIndeksas, studentai);
         if (pasirinkimas == 6) PasirinkimasSkaiciuotiVidurki(studentai);
         if (pasirinkimas == 7) PasirinkimasSkaiciuotiMediana(studentai);
-        if (pasirinkimas == 7) PasirinkimasSkaiciuotiAbu(studentai);
+        if (pasirinkimas == 8) PasirinkimasSkaiciuotiAbu(studentai);
     }
 }
