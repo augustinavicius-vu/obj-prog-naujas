@@ -87,7 +87,7 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
 
 void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta)
 {
-    std::ofstream failas(vieta);
+    std::ofstream failas(vieta + "");
     for (int i = 0; i < studentuSk; i++)
     {
         failas << studentai[i].vardas << " " << studentai[i].pavarde;
@@ -215,16 +215,19 @@ void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studen
     std::chrono::duration<double> diffSort = endSort - startSort;
     std::cout << irasuSk << " įrašų rūšiavimas į dvi kategorijas užtruko: " << diffSort.count() << std::endl;
 
+    // Vieta galvociams ir vargsiukams
+    std::string vietaVarg = vieta.substr(0, vieta.find(".", 0)).append("_vargsiukai.txt");
+    std::string vietaGalv = vieta.substr(0, vieta.find(".", 0)).append("_galvociai.txt");
     // Studentų išvedimas į failus galvočiai
     auto startWrite1 = std::chrono::high_resolution_clock::now();
-    GeneruotiFailaBalas(studentaiASk, studentaiA, vieta);
+    GeneruotiFailaBalas(studentaiASk, studentaiA, vietaVarg);
     auto endWrite1 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffWrite1 = endWrite1 - startWrite1;
     std::cout << irasuSk << " vargšiukų įrašų įrašymas į failą užtruko: " << diffWrite1.count() << std::endl;
 
     // Studentų išvedimas į failus galvočiai
     auto startWrite2 = std::chrono::high_resolution_clock::now();
-    GeneruotiFailaBalas(studentaiBSk, studentaiB, vieta);
+    GeneruotiFailaBalas(studentaiBSk, studentaiB, vietaGalv);
     auto endWrite2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffWrite2 = endWrite2 - startWrite2;
     std::cout << irasuSk << " galvočių įrašų įrašymas į failą užtruko: " << diffWrite2.count() << std::endl;
