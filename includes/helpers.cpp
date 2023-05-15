@@ -85,8 +85,26 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
     failas.close();
 }
 
+void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta)
+{
+    std::ofstream failas(vieta);
+    for (int i = 0; i < studentuSk; i++)
+    {
+        failas << studentai[i].vardas << " " << studentai[i].pavarde;
+        for (int j = 0; j < studentai[i].namuDarbaiRez.size(); j++)
+        {
+            failas << " " << studentai[i].namuDarbaiRez[j];
+        }
+        failas << " " << studentai[i].egzaminasRez << std::endl;
+    }
+    failas.close();
+}
+
 void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndeksas)
 {
+    studentoIndeksas = 0;
+    studentai.clear();
+
     std::ifstream failas(vieta);
 
     int laukelis = -1;
@@ -131,6 +149,7 @@ void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndek
                 tempEgzaminasRez = std::stoi(tekstas);
                 NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
 
+                tempNamuDarbaiRez.clear();
                 laukelis = -1;
                 continue;
             }
@@ -148,30 +167,72 @@ void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndek
     failas.close();
 }
 
+void RusiuotiStudentusBalas(VStudentas &studentai, VStudentas &studentaiA, VStudentas &studentaiB, int &studentaiASk, int &studentaiBSk, int &studentoIndeksas)
+{
+    for (int i = 0; i < studentoIndeksas; i++)
+    {
+        double studentoVidurkis = StudentoVidurkis(studentai[i]);
+        if (studentoVidurkis < 5) {
+            studentaiA.push_back(Studentas());
+            studentaiA[studentaiASk] = studentai[i];
+            studentaiASk++;
+        } else {
+            studentaiB.push_back(Studentas());
+            studentaiB[studentaiBSk] = studentai[i];
+            studentaiBSk++;
+        }
+    }
+}
+
 void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai)
 {
+    // Pradžia
     std::cout << "Pradedama programos spartos analizė" << std::endl;
+    auto start = std::chrono::high_resolution_clock::now();
 
     // Failo generavimas
     auto startGen = std::chrono::high_resolution_clock::now();
     GeneruotiFaila(irasuSk, namuDarbuSk, vieta);
     auto endGen = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffGen = endGen - startGen;
-    std::cout << irasuSk << " įrašų generavimas ir išvedimas į failą truko: " << diffGen.count() << std::endl;
+    std::cout << irasuSk << " įrašų generavimas ir išvedimas į failą užtruko: " << diffGen.count() << std::endl;
 
     // Failo nuskaitymas
     auto startRead = std::chrono::high_resolution_clock::now();
     NuskaityiFaila(studentai, vieta, studentoIndeksas);
     auto endRead = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffRead = endRead - startRead;
-    std::cout << irasuSk << " įrašų nuskaitymas truko: " << diffRead.count() << std::endl;
+    std::cout << irasuSk << " įrašų nuskaitymas užtruko: " << diffRead.count() << std::endl;
 
-    
+    // Studentų rūšiavimas
+    auto startSort = std::chrono::high_resolution_clock::now();
+    VStudentas studentaiA;
+    VStudentas studentaiB;
+    int studentaiASk = 0;
+    int studentaiBSk = 0;
+    RusiuotiStudentusBalas(studentai, studentaiA, studentaiB, studentaiASk, studentaiBSk, studentoIndeksas);
+    auto endSort = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffSort = endSort - startSort;
+    std::cout << irasuSk << " įrašų rūšiavimas į dvi kategorijas užtruko: " << diffSort.count() << std::endl;
 
+    // Studentų išvedimas į failus galvočiai
+    auto startWrite1 = std::chrono::high_resolution_clock::now();
+    GeneruotiFailaBalas(studentaiASk, studentaiA, vieta);
+    auto endWrite1 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffWrite1 = endWrite1 - startWrite1;
+    std::cout << irasuSk << " vargšiukų įrašų įrašymas į failą užtruko: " << diffWrite1.count() << std::endl;
 
+    // Studentų išvedimas į failus galvočiai
+    auto startWrite2 = std::chrono::high_resolution_clock::now();
+    GeneruotiFailaBalas(studentaiBSk, studentaiB, vieta);
+    auto endWrite2 = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffWrite2 = endWrite2 - startWrite2;
+    std::cout << irasuSk << " galvočių įrašų įrašymas į failą užtruko: " << diffWrite2.count() << std::endl;
+
+    // Pabaiga
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diff = end - start;
+    std::cout << "Programos veiko analizė užtruko: " << diff.count() << std::endl;
 
     Pauze();
-
-
-
 }
