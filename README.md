@@ -53,13 +53,13 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 ## Konteinerių spartos analizė
 1.000
-![image](https://imgur.com/a/PfmJcYK.jpg)
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/95df444a-3114-4eb0-b215-c43721eb941b)
 10.000
-![image](https://imgur.com/a/vSvU6uf.jpg)
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/bc792437-6d09-423c-bcfc-bcc7a3724417)
 100.000
-![image](https://imgur.com/a/chzQscp.jpg)
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/68c6c380-760d-40a6-a837-6c5d8e204ae9)
 1.000.000
-![image](https://imgur.com/a/Vo2ZGkm.jpg)
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f56abda7-3595-4a9b-8174-4485d45bea26)
 
 # Versijos
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
