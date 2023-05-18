@@ -31,7 +31,7 @@ Vėliau pagrindinėje direktorijoje pakanka paleisti `make` komandą ir atsiras 
 PATARIMAS: Jeigu įmanoma, patariu susikurti [Windows Ubuntu WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 # Testai
-Visi testai atlikti naudojat:
+Visi testai atlikti naudojant:
 - CPU: AMD EPYC™ 7702
 - RAM: 16 GB DDR4 RAM (ECC)
 - SSD
