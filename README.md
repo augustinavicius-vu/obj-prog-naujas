@@ -38,12 +38,16 @@ Visi testai atlikti naudojant:
 
 ## Programos spartos analizė
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
+
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f3d670c9-fba4-4da2-8ef7-f5d20fc5d704)
+
 10.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/13b7fee6-0c14-431e-b34b-1177358e115e)
+
 100.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/797aadc0-89ec-4e50-a847-43453dbcd21e)
+
 1.000.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/adf7df7f-5acf-4789-abd1-dd7a490ee43d)
 
