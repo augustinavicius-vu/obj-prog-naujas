@@ -246,7 +246,7 @@ void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studen
     // Pabaiga
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end - start;
-    std::cout << "Programos veiko analizė užtruko: " << diff.count() << std::endl;
+    std::cout << "Programos analizė užtruko: " << diff.count() << std::endl;
 
     Pauze();
 }
