@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include <chrono>
+#include <type_traits>
 
 #include "studentas.h"
 #include "calculations.h"
@@ -33,17 +34,19 @@ void Pauze()
     #endif
 }
 
-void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
+template <typename Container>
+void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
 {
-    studentai.push_back(Studentas());
-
-    studentai[studentoIndeksas].vardas = vardas;
-    studentai[studentoIndeksas].pavarde = pavarde;
-    studentai[studentoIndeksas].egzaminasRez = egzaminasRez;
-    studentai[studentoIndeksas].namuDarbaiRez = namuDarbaiRez;
-
+    studentai.push_back({ vardas, pavarde, egzaminasRez, namuDarbaiRez});
     studentoIndeksas++;
 }
+/*
+template <typename Container>
+void NaujasStudentasList(int &studentoIndeksas, LStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
+{
+
+}
+*/
 
 bool RikiavimoTipas(const Studentas &studentasA, const Studentas &studentasB)
 {
@@ -58,9 +61,15 @@ bool RikiavimoTipas(const Studentas &studentasA, const Studentas &studentasB)
     
 }
 
-void RikiuotiStudentus(VStudentas &studentai)
+template <typename Container>
+void RikiuotiStudentus(Container &studentai)
 {
     std::sort(studentai.begin(), studentai.end(), RikiavimoTipas);
+}
+
+void RikiuotiStudentusList(LStudentas &studentai)
+{
+    studentai.sort(RikiavimoTipas);
 }
 
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta) 
@@ -87,20 +96,22 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
 
 void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta)
 {
-    std::ofstream failas(vieta + "");
-    for (int i = 0; i < studentuSk; i++)
+    std::ofstream failas(vieta);
+
+    for (const auto &studentas : studentai)
     {
-        failas << studentai[i].vardas << " " << studentai[i].pavarde;
-        for (int j = 0; j < studentai[i].namuDarbaiRez.size(); j++)
+        failas << studentas.vardas << " " << studentas.pavarde;
+        for (const auto &pazymys: studentas.namuDarbaiRez)
         {
-            failas << " " << studentai[i].namuDarbaiRez[j];
+            failas << " " << pazymys;
         }
-        failas << " " << studentai[i].egzaminasRez << std::endl;
+        failas << " " << studentas.egzaminasRez << std::endl;
     }
+
     failas.close();
 }
-
-void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndeksas)
+template <typename Container>
+void NuskaityiFaila(Container &studentai, std::string vieta, int &studentoIndeksas)
 {
     studentoIndeksas = 0;
     studentai.clear();
@@ -147,6 +158,7 @@ void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndek
             if (laukelis > 1 + namuDarbuSk)
             {
                 tempEgzaminasRez = std::stoi(tekstas);
+
                 NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
 
                 tempNamuDarbaiRez.clear();
@@ -167,25 +179,24 @@ void NuskaityiFaila(VStudentas &studentai, std::string vieta, int &studentoIndek
     failas.close();
 }
 
-void RusiuotiStudentusBalas(VStudentas &studentai, VStudentas &studentaiA, VStudentas &studentaiB, int &studentaiASk, int &studentaiBSk, int &studentoIndeksas)
+template <typename Container>
+void RusiuotiStudentusBalas(Container &studentai, Container &studentaiA, Container &studentaiB, int &studentaiASk, int &studentaiBSk)
 {
-    for (int i = 0; i < studentoIndeksas; i++)
+    for (const auto& studentas : studentai)
     {
-        double studentoVidurkis = StudentoVidurkis(studentai[i]);
+        double studentoVidurkis = StudentoVidurkis(studentas);
         if (studentoVidurkis < 5) {
-            studentaiA.push_back(Studentas());
-            studentaiA[studentaiASk] = studentai[i];
-            studentaiASk++;
+            studentaiA.push_back(studentas);
         } else {
-            studentaiB.push_back(Studentas());
-            studentaiB[studentaiBSk] = studentai[i];
-            studentaiBSk++;
+            studentaiB.push_back(studentas);
         }
     }
 }
 
 void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai)
 {
+    ValytiIsvesti();
+
     // Pradžia
     std::cout << "Pradedama programos spartos analizė" << std::endl;
     auto start = std::chrono::high_resolution_clock::now();
@@ -210,7 +221,7 @@ void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studen
     VStudentas studentaiB;
     int studentaiASk = 0;
     int studentaiBSk = 0;
-    RusiuotiStudentusBalas(studentai, studentaiA, studentaiB, studentaiASk, studentaiBSk, studentoIndeksas);
+    RusiuotiStudentusBalas(studentai, studentaiA, studentaiB, studentaiASk, studentaiBSk);
     auto endSort = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffSort = endSort - startSort;
     std::cout << irasuSk << " įrašų rūšiavimas į dvi kategorijas užtruko: " << diffSort.count() << std::endl;
@@ -237,5 +248,107 @@ void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studen
     std::chrono::duration<double> diff = end - start;
     std::cout << "Programos veiko analizė užtruko: " << diff.count() << std::endl;
 
+    Pauze();
+}
+
+void TestuotiKonteinerius(std::string vieta)
+{
+    ValytiIsvesti();
+
+    // Pradžia
+    std::cout << "Pradedamas konteinerių testavimas" << std::endl;
+
+    // Pradiniai kintamieji
+    VStudentas studentaiVector;
+    LStudentas studentaiList;
+    DStudentas studentaiDeque;
+
+    int studentoIndeksasV = 0;
+    int studentoIndeksasL = 0;
+    int studentoIndeksasD = 0;
+
+    // Konteneriu testavimas
+    // Nuskaitymas
+    // Vector
+    auto startReadVector = std::chrono::high_resolution_clock::now();
+    NuskaityiFaila(studentaiVector, vieta, studentoIndeksasV);
+    auto endReadVector = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffReadVector = endReadVector - startReadVector;
+    std::cout << studentoIndeksasV << " įrašų nuskaitymas truko su Vector: " << diffReadVector.count() << std::endl;
+
+    // List
+    auto startReadList = std::chrono::high_resolution_clock::now();
+    NuskaityiFaila(studentaiList, vieta, studentoIndeksasL);
+    auto endReadList = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffReadList = endReadList - startReadList;
+    std::cout << studentoIndeksasV << " įrašų nuskaitymas truko su List: " << diffReadList.count() << std::endl;
+
+    // Deque
+    auto startReadDeque = std::chrono::high_resolution_clock::now();
+    NuskaityiFaila(studentaiDeque, vieta, studentoIndeksasD);
+    auto endReadDeque = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffReadDeque = endReadDeque - startReadDeque;
+    std::cout << studentoIndeksasV << " įrašų nuskaitymas truko su Deque: " << diffReadDeque.count() << std::endl;
+
+
+    // Rūšiavimas
+    // Vector
+    auto startSortVector = std::chrono::high_resolution_clock::now();
+    RikiuotiStudentus(studentaiVector);
+    auto endSortVector = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffSortVector = endSortVector - startSortVector;
+    std::cout << studentoIndeksasV << " įrašų rikiavimas truko su Vector: " << diffSortVector.count() << std::endl;
+
+    // List
+    auto startSortList = std::chrono::high_resolution_clock::now();
+    RikiuotiStudentusList(studentaiList);
+    auto endSortList = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffSortList = endSortList - startSortList;
+    std::cout << studentoIndeksasV << " įrašų rikiavimas truko su List: " << diffSortList.count() << std::endl;
+
+    // Deque
+    auto startSortDeque = std::chrono::high_resolution_clock::now();
+    RikiuotiStudentus(studentaiDeque);
+    auto endSortDeque = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffSortDeque = endSortDeque - startSortDeque;
+    std::cout << studentoIndeksasV << " įrašų rikiavimas truko su Deque: " << diffSortDeque.count() << std::endl;
+
+    // Filtravimas
+    // Pagrindiniai kitamieji
+    VStudentas studentaiVectorGalv;
+    VStudentas studentaiVectorVarg;
+    int studentoIndeksasVGalv = 0;
+    int studentoIndeksasVVarg = 0;
+
+    LStudentas studentaiListGalv;
+    LStudentas studentaiListVarg;
+    int studentoIndeksasLGalv = 0;
+    int studentoIndeksasLVarg = 0;
+
+    DStudentas studentaiDequeGalv;
+    DStudentas studentaiDequeVarg;
+    int studentoIndeksasDGalv = 0;
+    int studentoIndeksasDVarg = 0;
+
+    // Vector
+    auto startFilterVector = std::chrono::high_resolution_clock::now();
+    RusiuotiStudentusBalas(studentaiVector, studentaiVectorVarg, studentaiVectorGalv, studentoIndeksasVVarg, studentoIndeksasVGalv);
+    auto endFilterVector = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffFilterVector = endFilterVector - startFilterVector;
+    std::cout << studentoIndeksasV << " įrašų filtravimas truko su Vector: " << diffFilterVector.count() << std::endl;
+
+    // List
+    auto startFilterList = std::chrono::high_resolution_clock::now();
+    RusiuotiStudentusBalas(studentaiList, studentaiListVarg, studentaiListGalv, studentoIndeksasLVarg, studentoIndeksasLGalv);
+    auto endFilterList = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffFilterList = endFilterList - startFilterList;
+    std::cout << studentoIndeksasV << " įrašų filtravimas truko su List: " << diffFilterList.count() << std::endl;
+
+    // Deque
+    auto startFilterDeque = std::chrono::high_resolution_clock::now();
+    RusiuotiStudentusBalas(studentaiDeque, studentaiDequeVarg, studentaiDequeGalv, studentoIndeksasDVarg, studentoIndeksasDGalv);
+    auto endFilterDeque = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
+    std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
     Pauze();
 }

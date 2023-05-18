@@ -126,7 +126,7 @@ void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
     // STUDENTO KŪRIMAS
     try
     {
-        NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
+        //NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
     }
     catch (const std::exception &e)
     {
@@ -247,7 +247,7 @@ void PasirinkimasNuskaitytiFaila(int &studentoIndeksas, VStudentas &studentai)
         if (laukelis > 1 + namuDarbuSk)
         {
             tempEgzaminasRez = std::stoi(tekstas);
-            NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
+            //NaujasStudentas(studentoIndeksas, studentai, tempVardas, tempPavarde, tempEgzaminasRez, tempNamuDarbaiRez);
 
             laukelis = -1;
             continue;
@@ -266,7 +266,7 @@ void PasirinkimasSkaiciuotiAbu(VStudentas &studentai)
     std::cout << "Galutinė med." << std::endl;
     std::cout << "----------------------------------------------------------------------------" << std::endl;
 
-    RikiuotiStudentus(studentai);
+    //RikiuotiStudentus(studentai);
 
     for (auto &studentas : studentai)
     {
@@ -287,7 +287,7 @@ void PasirinkimasSkaiciuotiVidurki(VStudentas &studentai)
     std::cout << "Galutinis vid." << std::endl;
     std::cout << "------------------------------------------------------" << std::endl;
 
-    RikiuotiStudentus(studentai);
+    //RikiuotiStudentus(studentai);
 
     for (auto &studentas : studentai)
     {
@@ -307,7 +307,7 @@ void PasirinkimasSkaiciuotiMediana(VStudentas &studentai)
     std::cout << "Galutinė med." << std::endl;
     std::cout << "------------------------------------------------------" << std::endl;
 
-    RikiuotiStudentus(studentai);
+    //RikiuotiStudentus(studentai);
 
     for (auto &studentas : studentai)
     {
@@ -367,6 +367,16 @@ void PasirinkimasGreicioAnalize(int &studentoIndeksas, VStudentas &studentai)
     TestuotiSparta(irasuSk, namuDarbuSk, vieta, studentoIndeksas, studentai);
 }
 
+void PasirinkimasKonteineriuAnalize()
+{
+    ValytiIsvesti();
+    std::cout << "Įveskite iš kur norite nuskaityti įrašų failą" << std::endl;
+    std::string vieta;
+    std::cin >> vieta;
+
+    TestuotiKonteinerius(vieta);
+}
+
 void Ivestis(int &studentoIndeksas, VStudentas &studentai)
 {
     while (true)
@@ -374,24 +384,26 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
         ValytiIsvesti();
         if (studentoIndeksas < 1)
         {
-            std::cout << "Pasirinkite veiksmą (1-5):" << std::endl;
+            std::cout << "Pasirinkite veiksmą (1-6):" << std::endl;
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Generuoti studentus" << std::endl;
             std::cout << "3. Nuskaityti studentų failą" << std::endl;
             std::cout << "4. Generuoti studentų failą" << std::endl;
             std::cout << "5. Programos veikimo greičio analizė" << std::endl;
+            std::cout << "6. Konteinerių veikimo greičio analizė" << std::endl;
         }
         else
         {
-            std::cout << "Pasirinkite veiksmą (1-8):" << std::endl;
+            std::cout << "Pasirinkite veiksmą (1-9):" << std::endl;
             std::cout << "1. Naujas studentas" << std::endl;
             std::cout << "2. Generuoti studentus" << std::endl;
             std::cout << "3. Nuskaityti studentų failą" << std::endl;
             std::cout << "4. Generuoti studentų failą" << std::endl;
             std::cout << "5. Programos veikimo greičio analizė" << std::endl;
-            std::cout << "6. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-            std::cout << "7. Skaičiuoti studentų galutinę medianą" << std::endl;
-            std::cout << "8. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
+            std::cout << "6. Konteinerių veikimo greičio analizė" << std::endl;
+            std::cout << "7. Skaičiuoti studentų galutinį vidurkį" << std::endl;
+            std::cout << "8. Skaičiuoti studentų galutinę medianą" << std::endl;
+            std::cout << "9. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
         }
 
         int pasirinkimas;
@@ -402,33 +414,35 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
             // Programos pradžia
             if (studentoIndeksas < 1)
             {
-                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4 && pasirinkimas != 5))
+                if (!(std::cin) || (pasirinkimas < 1 || pasirinkimas > 6))
                 {
                     ValytiIsvesti();
-                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-5):" << std::endl;
+                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-6):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;
                     std::cout << "3. Nuskaityti studentų failą" << std::endl;
                     std::cout << "4. Generuoti studentų failą" << std::endl;
                     std::cout << "5. Programos veikimo greičio analizė" << std::endl;
+                    std::cout << "6. Konteinerių veikimo greičio analizė" << std::endl;
                     ValytiIvesti();
                     continue;
                 }
             }
             else // Programa tęsias
             {
-                if (!(std::cin) || (pasirinkimas != 1 && pasirinkimas != 2 && pasirinkimas != 3 && pasirinkimas != 4 && pasirinkimas != 5 && pasirinkimas != 6 && pasirinkimas != 7 && pasirinkimas != 8))
+                if (!(std::cin) || (pasirinkimas < 1 || pasirinkimas > 9))
                 {
                     ValytiIsvesti();
-                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-8):" << std::endl;
+                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-9):" << std::endl;
                     std::cout << "1. Naujas studentas" << std::endl;
                     std::cout << "2. Generuoti studentus" << std::endl;
                     std::cout << "3. Nuskaityti studentų failą" << std::endl;
                     std::cout << "4. Generuoti studentų failą" << std::endl;
                     std::cout << "5. Programos veikimo greičio analizė" << std::endl;
-                    std::cout << "6. Skaičiuoti studentų galutinį vidurkį" << std::endl;
-                    std::cout << "7. Skaičiuoti studentų galutinę medianą" << std::endl;
-                    std::cout << "8. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
+                    std::cout << "6. Konteinerių veikimo greičio analizė" << std::endl;
+                    std::cout << "7. Skaičiuoti studentų galutinį vidurkį" << std::endl;
+                    std::cout << "8. Skaičiuoti studentų galutinę medianą" << std::endl;
+                    std::cout << "9. Skaičiuoti studentų galutinį vidurkį ir medianą" << std::endl;
                     ValytiIvesti();
                     continue;
                 }
@@ -442,8 +456,9 @@ void Ivestis(int &studentoIndeksas, VStudentas &studentai)
         if (pasirinkimas == 3) PasirinkimasNuskaitytiFaila(studentoIndeksas, studentai);
         if (pasirinkimas == 4) PasirinkimasGeneruotiFaila();
         if (pasirinkimas == 5) PasirinkimasGreicioAnalize(studentoIndeksas, studentai);
-        if (pasirinkimas == 6) PasirinkimasSkaiciuotiVidurki(studentai);
-        if (pasirinkimas == 7) PasirinkimasSkaiciuotiMediana(studentai);
-        if (pasirinkimas == 8) PasirinkimasSkaiciuotiAbu(studentai);
+        if (pasirinkimas == 6) PasirinkimasKonteineriuAnalize();
+        if (pasirinkimas == 7) PasirinkimasSkaiciuotiVidurki(studentai);
+        if (pasirinkimas == 8) PasirinkimasSkaiciuotiMediana(studentai);
+        if (pasirinkimas == 9) PasirinkimasSkaiciuotiAbu(studentai);
     }
 }

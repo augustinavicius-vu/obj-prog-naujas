@@ -2,6 +2,8 @@
 
 #include <string>
 #include <vector>
+#include <list>
+#include <deque>
 
 struct Studentas
 {
@@ -12,3 +14,5 @@ struct Studentas
 };
 
 typedef std::vector<Studentas> VStudentas;
+typedef std::list<Studentas> LStudentas;
+typedef std::deque<Studentas> DStudentas;

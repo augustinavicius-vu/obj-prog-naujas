@@ -11,10 +11,16 @@ void ValytiIsvesti();
 void Pauze();
 
 // Pagalbinės funkcijos
-void NaujasStudentas(int &studentoIndeksas, VStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez);
-void RikiuotiStudentus(VStudentas &studentai);
-void RusiuotiStudentusBalas(VStudentas &studentai, VStudentas &studentaiA, VStudentas &studentaiB, int &studentaiASk, int &studentaiBSk, int &studentoIndeksas);
+template <typename Container>
+void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez);
+
+template <typename Container>
+void RikiuotiStudentus(Container &studentai);
+
+template <typename Container>
+void RusiuotiStudentusBalas(Container &studentai, Container &studentaiA, Container &studentaiB, int &studentaiASk, int &studentaiBSk);
 
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
 void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta);
 void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai);
+void TestuotiKonteinerius(std::string vieta);
