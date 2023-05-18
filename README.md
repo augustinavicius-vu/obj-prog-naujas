@@ -39,23 +39,23 @@ Visi testai atlikti naudojant:
 ## Programos spartos analizė
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 1.000 įrašų:
-!(image)[https://imgur.com/a/ObEqSQu]
+![image](https://imgur.com/a/ObEqSQu.jpg)
 10.000 įrašų:
-!(image)[https://imgur.com/a/7uPxOqT]
+![image](https://imgur.com/a/7uPxOqT.jpg)
 100.000 įrašų:
-!(image)[https://imgur.com/a/4G19f4d]
+![image](https://imgur.com/a/4G19f4d.jpg)
 1.000.000 įrašų:
-!(image)[https://imgur.com/a/7AeqX23]
+![image](https://imgur.com/a/7AeqX23.jpg)
 
 ## Konteinerių spartos analizė
 1.000
-!(image)[https://imgur.com/a/PfmJcYK]
+![image](https://imgur.com/a/PfmJcYK.jpg)
 10.000
-!(image)[https://imgur.com/a/vSvU6uf]
+![image](https://imgur.com/a/vSvU6uf.jpg)
 100.000
-!(image)[https://imgur.com/a/chzQscp]
+![image](https://imgur.com/a/chzQscp.jpg)
 1.000.000
-!(image)[https://imgur.com/a/Vo2ZGkm]
+![image](https://imgur.com/a/Vo2ZGkm.jpg)
 
 # Versijos
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
