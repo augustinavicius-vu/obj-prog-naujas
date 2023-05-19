@@ -59,7 +59,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/adf7df7f-5acf-4789-abd1-dd7a490ee43d)
 
 ## Konteinerių spartos analizė
-
+Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. Svarbu paminėti, kad deque yra universalesnis skirtingose situacijose.
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000 įrašų:
@@ -74,7 +74,8 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 1.000.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f56abda7-3595-4a9b-8174-4485d45bea26)
 
-## Įrašų rūšiavimo į dvi kategorijas strategijų testavimas
+## Įrašų rūšiavimo į dvi kategorijas skirtingų strategijų analizė
+Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. Svarbu paminėti, kad deque yra universalesnis skirtingose situacijose.
 
 1. Kuriami papildomai du atskiri konteineiriai galvočiams ir vargšiukams.
 2. Kuriamas papildomas vienas konteineris galvočiams ir iš originalaus ištrinant galvočių konteineryje esantis studentas
