@@ -82,6 +82,7 @@ Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuot
 
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 1 strategijos rezultatai:
+
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/fe2bcab6-3d75-4132-a36c-04bef355396f)
 
@@ -96,6 +97,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 
 2 strategijos rezultatai:
+
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/2c2240ce-9f0d-42f5-8544-6f3937ab7fc1)
 
