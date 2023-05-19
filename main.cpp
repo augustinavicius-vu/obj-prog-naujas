@@ -4,7 +4,7 @@
 // Mano bibliotekos/funkcijos
 #include "./includes/studentas.h"
 #include "./includes/calculations.h"
-#include "./includes/helpers.h"
+#include "./includes/functions.h"
 #include "./includes/menu.h"
 
 // Pagrindiniai kintamieji

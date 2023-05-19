@@ -5,7 +5,7 @@
 
 #include "studentas.h"
 
-#include "helpers.h"
+#include "functions.h"
 #include "calculations.h"
 
 void PasirinkimasNaujasStudentas(int &studentoIndeksas, VStudentas &studentai)
