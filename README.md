@@ -26,7 +26,7 @@ g++ -std=c++0x -c main.cpp
 g++ -std=c++11 -c main.cpp
 ```
 
-# Windows
+## Windows
 
 Labai patariu suinstaliuoti MinGW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą [nuorodą](https://linuxhint.com/run-makefile-windows/). Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti [čia](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html).
 
