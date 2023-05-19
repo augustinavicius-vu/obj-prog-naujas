@@ -59,7 +59,8 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/adf7df7f-5acf-4789-abd1-dd7a490ee43d)
 
 ## Konteinerių spartos analizė
-Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. Svarbu paminėti, kad deque yra universalesnis skirtingose situacijose.
+
+Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. **Svarbu paminėti,** kad deque yra universalesnis skirtingose situacijose.
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000 įrašų:
@@ -75,13 +76,14 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f56abda7-3595-4a9b-8174-4485d45bea26)
 
 ## Įrašų rūšiavimo į dvi kategorijas skirtingų strategijų analizė
-Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. Svarbu paminėti, kad deque yra universalesnis skirtingose situacijose.
+
+Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuoti programą. **Svarbu paminėti,** kad deque yra universalesnis skirtingose situacijose.
 
 1. Kuriami papildomai du atskiri konteineiriai galvočiams ir vargšiukams.
 2. Kuriamas papildomas vienas konteineris galvočiams ir iš originalaus ištrinant galvočių konteineryje esantis studentas
 
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
-1 strategijos rezultatai:
+**1 strategijos rezultatai:**
 
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/fe2bcab6-3d75-4132-a36c-04bef355396f)
@@ -95,8 +97,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 1.000.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
 
-
-2 strategijos rezultatai:
+**2 strategijos rezultatai:**
 
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/2c2240ce-9f0d-42f5-8544-6f3937ab7fc1)
@@ -109,6 +110,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
+
 # Versijos
 
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
