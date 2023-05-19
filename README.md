@@ -80,7 +80,6 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 2. Kuriamas papildomas vienas konteineris galvočiams ir iš originalaus ištrinant galvočių konteineryje esantis studentas
 
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
-
 1 strategijos rezultatai:
 1.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/fe2bcab6-3d75-4132-a36c-04bef355396f)
@@ -94,6 +93,19 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 1.000.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
 
+
+2 strategijos rezultatai:
+1.000 įrašų:
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/2c2240ce-9f0d-42f5-8544-6f3937ab7fc1)
+
+10.000 įrašų:
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/bca835b7-5554-4015-9ff6-d53e5cffea4a)
+
+100.000 įrašų:
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/165934d1-3c3b-4a1e-b2a3-ad0eaea8ef03)
+
+1.000.000 įrašų:
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
 # Versijos
 
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
