@@ -108,8 +108,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 100.000 įrašų:
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/165934d1-3c3b-4a1e-b2a3-ad0eaea8ef03)
 
-1.000.000 įrašų:
-![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
+1.000.000 įrašų: _(Vector konteineris truko apie 14 val., kol kas priežastis nežinoma)_
 
 # Versijos
 
