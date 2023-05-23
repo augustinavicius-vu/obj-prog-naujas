@@ -40,13 +40,6 @@ void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string va
     studentai.push_back({ vardas, pavarde, egzaminasRez, namuDarbaiRez});
     studentoIndeksas++;
 }
-/*
-template <typename Container>
-void NaujasStudentasList(int &studentoIndeksas, LStudentas &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
-{
-
-}
-*/
 
 bool RikiavimoTipas(const Studentas &studentasA, const Studentas &studentasB)
 {
@@ -193,6 +186,11 @@ void RusiuotiStudentusBalas(Container &studentai, Container &studentaiA, Contain
     }
 }
 
+
+bool kriterijusRusiuoti(Studentas studentas) {
+    double studentoVidurkis = StudentoVidurkis(studentas);
+    return studentoVidurkis < 5;
+}
 template <typename Container>
 void RusiuotiStudentusBalasNaujas(Container &studentai, Container &studentaiGalv)
 {
@@ -203,11 +201,12 @@ void RusiuotiStudentusBalasNaujas(Container &studentai, Container &studentaiGalv
 
         if (studentoVidurkis >= 5) {
             studentaiGalv.push_back(*studentoIteratorius);
-            studentoIteratorius = studentai.erase(studentoIteratorius);
         } else {
             ++studentoIteratorius;
         }
     }
+
+    studentai.erase(std::remove_if(studentai.begin(), studentai.end(), kriterijusRusiuoti), studentai.end()); // Panaikinama, aks nereikalinga
 }
 
 void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai)
@@ -332,8 +331,7 @@ void TestuotiKonteinerius(std::string vieta)
 
     // Filtravimas
     // 1 strategija
-    // Pagrindiniai kitamieji
-/*
+    // Pagrindiniai kintamieji
     VStudentas studentaiVectorGalv;
     VStudentas studentaiVectorVarg;
     int studentoIndeksasVGalv = 0;
@@ -369,7 +367,7 @@ void TestuotiKonteinerius(std::string vieta)
     auto endFilterDeque = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
     std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
-*/
+/*
     // 2 strategija
     VStudentas studentaiVectorGalv;
     LStudentas studentaiListGalv;
@@ -395,6 +393,7 @@ void TestuotiKonteinerius(std::string vieta)
     auto endFilterDeque = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
     std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
+    
 
     Pauze();
 }

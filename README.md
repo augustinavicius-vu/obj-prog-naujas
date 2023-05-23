@@ -114,6 +114,14 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
 
+
+
+## Versija 1.0
+
+* Atlikta dviejų skirtingų įrašų filtravimų strategija
+* Pagal turimus duomenis kodas optimizuotas
+* Atsižvelgus į dėstytojo nurodytus metodus, paspartinta vektoriaus konteinerio operacijos
+
 ## Versija 0.5
 
 - Sukurtas naujas meniu punktas „Konteinerių veikimo greičio analizė“
