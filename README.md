@@ -31,6 +31,7 @@ g++ -std=c++11 -c main.cpp
 Labai patariu suinstaliuoti MinGW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą [nuorodą](https://linuxhint.com/run-makefile-windows/). Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti [čia](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html).
 
 Vėliau pagrindinėje direktorijoje pakanka paleisti `make` komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.
+Taip pat, norėčiau pridurti, kad projektas taip pat palaiko ir `cmake`, tad galima atsiųsti šiam diegimo procesus reikalingus failus iš [čia](https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-windows-x86_64.msi) ir tieisog pagrindinėje direktorijoje paleisti `cmake .` komoandos ekvivalentą, norint sukurti paleidžiamą failą.
 
 PATARIMAS: Jeigu įmanoma, patariu susikurti [Windows Ubuntu WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -121,6 +122,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 * Atlikta dviejų skirtingų įrašų filtravimų strategija
 * Pagal turimus duomenis kodas optimizuotas
 * Atsižvelgus į dėstytojo nurodytus metodus, paspartinta vektoriaus konteinerio operacijos
+* Pridėtas CMAKE
 
 ## Versija 0.5
 

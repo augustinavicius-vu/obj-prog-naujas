@@ -394,6 +394,6 @@ void TestuotiKonteinerius(std::string vieta)
     std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
     std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
     
-
+*/
     Pauze();
 }
