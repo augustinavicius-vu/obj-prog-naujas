@@ -1,3 +1,0 @@
-/home/code/obj-prog/CMakeFiles/ObjProg.dir
-/home/code/obj-prog/CMakeFiles/edit_cache.dir
-/home/code/obj-prog/CMakeFiles/rebuild_cache.dir
