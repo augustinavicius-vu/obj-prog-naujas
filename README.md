@@ -114,6 +114,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 ## class vs struct studentams testai
 _Šie testai atlikti su jau optimizuotu kodu, kuris skiriasi nuo pradinių testų._
 **100.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+
 _Failo generavimas: (-36%)_
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/776b2bb1-6e75-4114-88b0-c734b584b461)
 
@@ -134,6 +135,7 @@ Bendras laikas class Studentas: 27s**
 
 
 **1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+
 _Failo generavimas: (-35%)_
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/54bd3169-5531-41e8-a333-3f0d95b8e5e4)
 
