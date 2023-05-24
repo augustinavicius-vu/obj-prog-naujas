@@ -1,18 +1,32 @@
 #pragma once
 
+#include <istream>
 #include <string>
 #include <vector>
-#include <list>
-#include <deque>
 
-struct Studentas
+class Studentas
 {
-    std::string vardas;
-    std::string pavarde;
-    int egzaminasRez;
-    std::vector<int> namuDarbaiRez;
+    private:
+        std::string vardas_;
+        std::string pavarde_;
+        double egzaminas_;
+        std::vector<double> namuDarbai_;
+    public:
+        // Konstruktoriai
+        Studentas() : egzaminas_(0) {}
+        Studentas(std::istream &is);
+
+        // GET
+        std::string vardas() const { return vardas_; }
+        std::string pavarde() const { return pavarde_ ;}
+        double egzaminas() const { return egzaminas_; }
+        const std::vector<double> namuDarbai() const { return namuDarbai_; }
+
+        // SET
+        std::istream &nuskaityti(std::istream &is);
+
+        // HELPERS
+        double galutinisBalas() const;
 };
 
-typedef std::vector<Studentas> VStudentas;
-typedef std::list<Studentas> LStudentas;
-typedef std::deque<Studentas> DStudentas;
+typedef std::vector<Studentas> StudentasVector;

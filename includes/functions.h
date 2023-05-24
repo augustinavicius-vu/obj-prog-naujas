@@ -10,6 +10,11 @@ void ValytiIvesti();
 void ValytiIsvesti();
 void Pauze();
 
+// Kitos funkcijos
+void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
+
+
+/*
 // Pagalbinės funkcijos
 template <typename Container>
 void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez);
@@ -20,7 +25,7 @@ void RikiuotiStudentus(Container &studentai);
 template <typename Container>
 void RusiuotiStudentusBalas(Container &studentai, Container &studentaiA, Container &studentaiB, int &studentaiASk, int &studentaiBSk);
 
-void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
 void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta);
 void TestuotiSparta(int irasuSk, int namuDarbuSk, std::string vieta, int &studentoIndeksas, VStudentas &studentai);
 void TestuotiKonteinerius(std::string vieta);
+*/

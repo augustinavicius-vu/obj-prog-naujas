@@ -5,9 +5,10 @@
 #include <string>
 #include <chrono>
 #include <type_traits>
+#include <random>
 
+#include "functions.h"
 #include "studentas.h"
-#include "calculations.h"
 
 // Valyti Naudotojo Įvestį
 void ValytiIvesti()
@@ -34,6 +35,37 @@ void Pauze()
     #endif
 }
 
+int AtsitiktinisSkaicius(int min, int max)
+{
+    std::random_device seed;
+    std::mt19937 generator(seed());
+    std::uniform_int_distribution<int> distribution(min, max);
+
+    return distribution(generator);
+}
+
+void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta) 
+{
+    std::ofstream failas(vieta);
+    failas << "Vardas Pavardė ";
+    for (int i = 0; i < namuDarbuSk; i++)
+    {
+        failas << "ND" << i + 1 << " ";
+    }
+    failas << "Egzaminas\n";
+
+    for (int i = 0; i < studentuSk; i++) {
+        failas << "Vardas" << i + 1 << " Pavardė" << i + 1;
+        for (int j = 0; j < namuDarbuSk; j++)
+        {
+            failas << " " << AtsitiktinisSkaicius(1, 10) << " "; // Namų darbai
+        }
+        failas << AtsitiktinisSkaicius(1, 10) << "\n"; // Egzaminas
+    }
+        
+    failas.close();
+}
+/*
 template <typename Container>
 void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
 {
@@ -63,28 +95,6 @@ void RikiuotiStudentus(Container &studentai)
 void RikiuotiStudentusList(LStudentas &studentai)
 {
     studentai.sort(RikiavimoTipas);
-}
-
-void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta) 
-{
-    std::ofstream failas(vieta);
-    failas << "Vardas Pavardė ";
-    for (int i = 0; i < namuDarbuSk; i++)
-    {
-        failas << "ND" << i + 1 << " ";
-    }
-    failas << "Egzaminas\n";
-
-    for (int i = 0; i < studentuSk; i++) {
-        failas << "Vardas" << i + 1 << " Pavardė" << i + 1;
-        for (int j = 0; j < namuDarbuSk; j++)
-        {
-            failas << " " << AtsitiktinisSkaicius(1, 10) << " "; // Namų darbai
-        }
-        failas << AtsitiktinisSkaicius(1, 10) << "\n"; // Egzaminas
-    }
-        
-    failas.close();
 }
 
 void GeneruotiFailaBalas(int studentuSk, VStudentas studentai, std::string vieta)
@@ -367,7 +377,6 @@ void TestuotiKonteinerius(std::string vieta)
     auto endFilterDeque = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
     std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
-/*
     // 2 strategija
     VStudentas studentaiVectorGalv;
     LStudentas studentaiListGalv;
@@ -394,6 +403,7 @@ void TestuotiKonteinerius(std::string vieta)
     std::chrono::duration<double> diffFilterDeque = endFilterDeque - startFilterDeque;
     std::cout << studentoIndeksasV << " įrašų filtravimas truko su Deque: " << diffFilterDeque.count() << std::endl;
     
-*/
     Pauze();
 }
+
+*/
