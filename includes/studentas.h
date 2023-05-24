@@ -7,17 +7,24 @@
 #include <vector>
 #include <iostream>
 
-class Studentas
+class Zmogus
 {
-    private:
+    protected:
         std::string vardas_;
         std::string pavarde_;
+
+    public:
+        Zmogus(const std::string& vardas, const std::string& pavarde) : vardas_(vardas), pavarde_(pavarde) {}
+};
+
+class Studentas : public Zmogus
+{
+    private:
         double egzaminas_;
         std::vector<double> namuDarbai_;
     public:
-        // Konstruktoriai
-        Studentas() : egzaminas_(0) {}
-        Studentas(std::istream &is);
+        // Konstruktorius
+        Studentas(const std::string& vardas, const std::string& pavarde, const double &egzaminas, std::vector<double> &namuDarbai) : Zmogus(vardas, pavarde), egzaminas_(egzaminas), namuDarbai_(namuDarbai) {}
 
         // GET
         std::string vardas() const { return vardas_; }
@@ -36,10 +43,12 @@ class Studentas
         ~Studentas() {}
 
         // Kopija
-        Studentas(const Studentas &naujas) : vardas_(naujas.vardas_), pavarde_(naujas.pavarde_), egzaminas_(naujas.egzaminas_), namuDarbai_(naujas.namuDarbai_) {}
+        Studentas(const Studentas&& naujas)
+        : Zmogus(std::move(naujas.vardas_), std::move(naujas.pavarde_)), egzaminas_(naujas.egzaminas_), namuDarbai_(std::move(naujas.namuDarbai_)) {}
 
         // Perkėlimas
-        Studentas(Studentas &&naujas) noexcept : vardas_(std::move(naujas.vardas_)), pavarde_(std::move(naujas.pavarde_)), egzaminas_(std::move(naujas.egzaminas_)), namuDarbai_(std::move(naujas.namuDarbai_)) {}
+        Studentas(Studentas&& naujas)
+        : Zmogus(std::move(naujas.vardas_), std::move(naujas.pavarde_)), egzaminas_(naujas.egzaminas_), namuDarbai_(std::move(naujas.namuDarbai_)) {}
 
         // Priskyrimo Operatorius
         Studentas &operator = (const Studentas& naujas)

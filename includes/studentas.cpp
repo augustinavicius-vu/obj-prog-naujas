@@ -5,11 +5,6 @@
 #include "studentas.h"
 #include "functions.h"
 
-Studentas::Studentas(std:: istream &is)
-{
-    nuskaitytiFaila(is);
-}
-
 std::istream& Studentas::nuskaitytiFaila(std::istream &is)
 {
     is >> vardas_ >> pavarde_;
