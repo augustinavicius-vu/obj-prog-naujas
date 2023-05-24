@@ -113,6 +113,7 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 ## class vs struct studentams testai
 _Šie testai atlikti su jau optimizuotu kodu, kuris skiriasi nuo pradinių testų._
+
 **100.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas: (-36%)_
