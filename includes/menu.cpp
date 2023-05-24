@@ -171,16 +171,47 @@ void PasirinkimasRusiuotiStudentus(StudentasVector &studentai, StudentasVector &
     std::partition_copy(studentai.begin(), studentai.end(), std::back_inserter(studentaiGalv), std::back_inserter(studentaiVarg), vertinimoKriterijus);
 
     auto end = std::chrono::high_resolution_clock::now();
+
     std::chrono::duration<double> diff = end - start;
     std::cout << studentai.size() << " įrašų rūšiavimas truko: " << diff.count() << std::endl;
 
+    Pauze();
+}
 
-    for(const auto &studentas : studentaiGalv)
-    {
-        std::cout << studentas.galutinisBalas() << std::endl;
-    }
+void PasirinkimasEksportuotiStudentus(StudentasVector &studentai, StudentasVector &studentaiGalv, StudentasVector &studentaiVarg)
+{
+    ValytiIsvesti();
+
+    std::cout << "Nurodykite failo vietą, kur norite išeksportuoti turimus studentus" << std::endl;
+    std::string vieta;
+    std::cin >> vieta;
+
+    std::string vietaVarg = vieta.substr(0, vieta.find(".", 0)).append("_vargsiukai.txt");
+    std::string vietaGalv = vieta.substr(0, vieta.find(".", 0)).append("_galvociai.txt");
+
+    std::cout << "Pradedamas duomenų įrašymas į failą" << std::endl;
+
+    // Galvočiai
+    auto startGalv = std::chrono::high_resolution_clock::now();
+
+    EksportuotiStudentus(studentaiGalv, vietaGalv);
+
+    auto endGalv = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffGalv = endGalv - startGalv;
+    std::cout << studentaiGalv.size() << " įrašų įrašymas į failą truko: " << diffGalv.count() << std::endl;
+
+
+    // Vargšiukai
+    auto startVarg = std::chrono::high_resolution_clock::now();
+
+    EksportuotiStudentus(studentaiVarg, vietaVarg);
+
+    auto endVarg = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> diffVarg = endVarg - startVarg;
+    std::cout << studentaiVarg.size() << " įrašų įrašymas į failą truko: " << diffVarg.count() << std::endl;
 
     Pauze();
+
 }
 
 /*
@@ -318,11 +349,12 @@ void Ivestis(StudentasVector &studentai, StudentasVector &studentaiGalv, Student
         }
         else
         {
-            std::cout << "Pasirinkite veiksmą (1-4):" << std::endl;
+            std::cout << "Pasirinkite veiksmą (1-5):" << std::endl;
             std::cout << "1. Sukurti/importuoti studentą/studentus" << std::endl;
             std::cout << "2. Generuoti studentų failą" << std::endl;
             std::cout << "3. Rikiuoti studentus" << std::endl;
             std::cout << "4. Rušiuoti studentus" << std::endl;
+            std::cout << "5. Eksportuoti studentus į failą" << std::endl;
         }
 
         int pasirinkimas;
@@ -345,14 +377,15 @@ void Ivestis(StudentasVector &studentai, StudentasVector &studentaiGalv, Student
             }
             else // Programa tęsias
             {
-                if (!(std::cin) || (pasirinkimas < 1 || pasirinkimas > 4))
+                if (!(std::cin) || (pasirinkimas < 1 || pasirinkimas > 5))
                 {
                     ValytiIsvesti();
-                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-4):" << std::endl;
+                    std::cout << "Blogas pasirinkimas! Galimi pasirinkimai (1-5):" << std::endl;
                     std::cout << "1. Sukurti/importuoti studentą/studentus" << std::endl;
                     std::cout << "2. Generuoti studentų failą" << std::endl;
                     std::cout << "3. Rikiuoti studentus" << std::endl;
                     std::cout << "4. Rušiuoti studentus" << std::endl;
+                    std::cout << "5. Eksportuoti studentus į failą" << std::endl;
                     ValytiIvesti();
                     continue;
                 }
@@ -365,7 +398,7 @@ void Ivestis(StudentasVector &studentai, StudentasVector &studentaiGalv, Student
         if (pasirinkimas == 2) PasirinkimasGeneruotiStudentuFaila();
         if (pasirinkimas == 3) PasirinkimasRikiuotiStudentus(studentai);
         if (pasirinkimas == 4) PasirinkimasRusiuotiStudentus(studentai, studentaiGalv, studentaiVarg);
-        //if (pasirinkimas == 4) PasirinkimasGeneruotiFaila();
+        if (pasirinkimas == 5) PasirinkimasEksportuotiStudentus(studentai, studentaiGalv, studentaiVarg);
         //if (pasirinkimas == 5) PasirinkimasGreicioAnalize(studentoIndeksas, studentai);
         //if (pasirinkimas == 6) PasirinkimasKonteineriuAnalize();
         //if (pasirinkimas == 7) PasirinkimasSkaiciuotiVidurki(studentai);

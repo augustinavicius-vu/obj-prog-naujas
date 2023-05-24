@@ -14,6 +14,7 @@ int AtsitiktinisSkaicius(int min, int max);
 
 // Funkcijos
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
+void EksportuotiStudentus(StudentasVector studentai, std::string vieta);
 
 
 /*

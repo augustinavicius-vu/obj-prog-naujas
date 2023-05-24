@@ -65,6 +65,34 @@ void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta)
         
     failas.close();
 }
+
+void EksportuotiStudentus(StudentasVector studentai, std::string vieta)
+{
+    // Failas Atsidaro
+    std::ofstream studentuFailas(vieta);
+
+    // Pavadinimai
+    studentuFailas << "Vardas " << "Pavardė ";
+    for (int i = 0; i < studentai[0].namuDarbai().size(); i++)
+    {
+        studentuFailas << "ND" << i +1 << " ";
+    }
+    studentuFailas << "Egzaminas" << std::endl;
+
+    // Duomenys
+    for (auto &studentas : studentai)
+    {
+        studentuFailas << studentas.vardas() << " " << studentas.pavarde() << " ";
+        for (auto &namuDarbas : studentas.namuDarbai())
+        {
+            studentuFailas << namuDarbas << " ";
+        }
+        studentuFailas << studentas.egzaminas() << std::endl;
+    }
+
+    // Failas Užsidaro
+    studentuFailas.close();
+}
 /*
 template <typename Container>
 void NaujasStudentas(int &studentoIndeksas, Container &studentai, std::string vardas, std::string pavarde, int egzaminasRez, std::vector<int> namuDarbaiRez)
