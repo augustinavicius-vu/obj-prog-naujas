@@ -32,3 +32,7 @@ class Studentas
 };
 
 typedef std::vector<Studentas> StudentasVector;
+
+// Predikatai
+bool palygintiVardus(const Studentas &studentasA, const Studentas &studentasB);
+bool vertinimoKriterijus(const Studentas &studentas);

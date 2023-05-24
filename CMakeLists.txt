@@ -7,15 +7,14 @@ include_directories(include)
 
 set(SOURCES
         main.cpp
-        includes/calculations.cpp
         includes/functions.cpp
-        includes/menu.cpp)
+        includes/menu.cpp
+        includes/studentas.cpp)
 
 # Add the header files
 set(HEADERS
         includes/menu.h
         includes/calculations.h
-        includes/functions.h
         includes/studentas.h)
 
 # Create the executable

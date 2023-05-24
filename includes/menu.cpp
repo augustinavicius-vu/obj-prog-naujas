@@ -12,8 +12,6 @@
 #include "studentas.h"
 #include "functions.h"
 
-#include "studentas.cpp"
-
 void PasirinkimasNaujasStudentas(StudentasVector &studentai)
 {
     ValytiIsvesti();
