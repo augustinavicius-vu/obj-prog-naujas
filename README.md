@@ -111,11 +111,58 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000.000 įrašų: _(Vector konteineris truko apie 14 val., kol kas priežastis nežinoma)_
 
+## class vs struct studentams testai
+_Šie testai atlikti su jau optimizuotu kodu, kuris skiriasi nuo pradinių testų._
+**100.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+_Failo generavimas: (-36%)_
+![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/776b2bb1-6e75-4114-88b0-c734b584b461)
+
+_Failo nuskaitymas ir įrašymas į atmintį: (+85%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/bbcf32c8-1bc1-45e1-9ada-1e86f2c3d4d0)
+
+_Studentų rikiavimas: (-95%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/2e89c02b-11c8-4134-acd0-d515b9ad5b30)
+
+_Studentų rūšiavimas į dvi grupes: (-15%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/3f4f6a78-eee4-4ee9-a399-139cb6a1d13a)
+
+_Dviejų grupių eksportas į du failus: (+165%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/8329514d-0390-45b2-ac36-d1cd12d2fc98)
+
+**Bendras laikas struct Studentas: 39s
+Bendras laikas class Studentas: 27s**
+
+
+**1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+_Failo generavimas: (-35%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/54bd3169-5531-41e8-a333-3f0d95b8e5e4)
+
+_Failo nuskaitymas ir įrašymas į atmintį: (+82%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/9d09a4d6-f2aa-4e58-9847-28bc6c2db8ef)
+
+_Studentų rikiavimas: (-38%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/010f2d61-16f9-4361-b8fb-a7d29a5c81f9)
+
+_Studentų rūšiavimas į dvi grupes: (-21%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/1e8c26c4-91d0-46c5-b2f4-d90544cec039)
+
+_Dviejų grupių eksportas į du failus: (+170%)_
+![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/e7b714c4-11c5-4a16-a740-b53328c87981)
+
+**Bendras laikas struct Studentas: 394s
+Bendras laikas class Studentas: 267s**
+
+**_Programa vidutiniškai veikia 30% geriau_**
+
 # Versijos
 
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
 
+## Versija 1.1
 
+* Pradėta naudoti `class` vietoj `struct` studentų duomenims laikyti
+* Pertvarkytas kodas, kad būtų galima naudoti metodus, skirtus `class` objektui
+* Panaikintos nebereikalingos funkcijos
 
 ## Versija 1.0
 
