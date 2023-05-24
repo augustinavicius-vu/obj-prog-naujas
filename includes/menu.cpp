@@ -6,8 +6,9 @@
 #include <fstream>
 
 #include "studentas.h"
-#include "studentas.cpp" // Temp Fix
 #include "functions.h"
+
+#include "studentas.cpp"
 
 void PasirinkimasNaujasStudentas(StudentasVector &studentai)
 {
@@ -36,9 +37,9 @@ void PasirinkimasNaujasStudentas(StudentasVector &studentai)
         ValytiIsvesti();
 
         Studentas tempStudentas;
+        tempStudentas.nuskaitytiKonsole(std::cin);
 
-        std::cout << "Įveskite studento vardą" << std::endl;
-        
+        studentai.push_back(tempStudentas);
     }
 
     // Failo nuskaitymas
@@ -65,7 +66,7 @@ void PasirinkimasNaujasStudentas(StudentasVector &studentai)
         {
             std::istringstream iss(eilute);
             Studentas tempStudentas;
-            tempStudentas.nuskaityti(iss);
+            tempStudentas.nuskaitytiFaila(iss);
             studentai.push_back(tempStudentas);
         }
 

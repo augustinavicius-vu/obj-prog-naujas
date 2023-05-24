@@ -23,7 +23,8 @@ class Studentas
         const std::vector<double> namuDarbai() const { return namuDarbai_; }
 
         // SET
-        std::istream &nuskaityti(std::istream &is);
+        std::istream &nuskaitytiFaila(std::istream &is);
+        std::istream &nuskaitytiKonsole(std::istream &is);
 
         // HELPERS
         double galutinisBalas() const;

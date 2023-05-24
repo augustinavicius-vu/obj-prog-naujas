@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <vector>
 
@@ -10,7 +9,10 @@ void ValytiIvesti();
 void ValytiIsvesti();
 void Pauze();
 
-// Kitos funkcijos
+// Papildomos funkcijos
+int AtsitiktinisSkaicius(int min, int max);
+
+// Funkcijos
 void GeneruotiFaila(int studentuSk, int namuDarbuSk, std::string vieta);
 
 
