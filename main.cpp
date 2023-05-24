@@ -9,9 +9,11 @@ int main()
 {
     // Studentų vektorius
     StudentasVector studentai;
+    StudentasVector studentaiGalv;
+    StudentasVector studentaiVarg;
 
     // Pradinė funkcija (Pagrindinis meniu, atsakingas už programos veikimą)
-    Ivestis(studentai);
+    Ivestis(studentai, studentaiGalv, studentaiVarg);
     
     return 0;
 }

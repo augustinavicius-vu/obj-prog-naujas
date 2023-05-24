@@ -141,3 +141,13 @@ double Studentas::galutinisBalas() const
 
     return ((suma / namuDarbai_.size()) * 0.4) + (egzaminas_ * 0.6);
 }
+
+bool palygintiVardus(const Studentas &studentasA, const Studentas &studentasB)
+{
+    return studentasA.vardas() > studentasB.vardas();
+}
+
+bool vertinimoKriterijus(const Studentas &studentas)
+{
+    return studentas.galutinisBalas() >= 5;
+}
