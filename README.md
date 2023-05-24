@@ -48,15 +48,19 @@ Visi testai atlikti naudojant:
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f3d670c9-fba4-4da2-8ef7-f5d20fc5d704)
 
 10.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/13b7fee6-0c14-431e-b34b-1177358e115e)
 
 100.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/797aadc0-89ec-4e50-a847-43453dbcd21e)
 
 1.000.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/adf7df7f-5acf-4789-abd1-dd7a490ee43d)
 
 ## Konteinerių spartos analizė
@@ -65,15 +69,19 @@ Pagal gautus rezultatus, list'as panašu yra tinkamiausias sprendimas optimizuot
 _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 
 1.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/95df444a-3114-4eb0-b215-c43721eb941b)
 
 10.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/bc792437-6d09-423c-bcfc-bcc7a3724417)
 
 100.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/68c6c380-760d-40a6-a837-6c5d8e204ae9)
 
 1.000.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/f56abda7-3595-4a9b-8174-4485d45bea26)
 
 ## Įrašų rūšiavimo į dvi kategorijas skirtingų strategijų analizė
@@ -87,26 +95,33 @@ _Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys_
 **1 strategijos rezultatai:**
 
 1.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/fe2bcab6-3d75-4132-a36c-04bef355396f)
 
 10.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/586add14-803f-469d-9442-1a77047222bd)
 
 100.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/e520a90c-21a3-4dc6-8dc5-1b325db11ee4)
 
 1.000.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/478fe4eb-6ceb-418a-abe1-cf48feb0ac8f)
 
 **2 strategijos rezultatai:**
 
 1.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/2c2240ce-9f0d-42f5-8544-6f3937ab7fc1)
 
 10.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/bca835b7-5554-4015-9ff6-d53e5cffea4a)
 
 100.000 įrašų:
+
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/165934d1-3c3b-4a1e-b2a3-ad0eaea8ef03)
 
 1.000.000 įrašų: _(Vector konteineris truko apie 14 val., kol kas priežastis nežinoma)_
@@ -120,15 +135,19 @@ _Failo generavimas: (-36%)_
 ![image](https://github.com/augustinavicius-vu/obj-prog/assets/101087475/776b2bb1-6e75-4114-88b0-c734b584b461)
 
 _Failo nuskaitymas ir įrašymas į atmintį: (+85%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/bbcf32c8-1bc1-45e1-9ada-1e86f2c3d4d0)
 
 _Studentų rikiavimas: (-95%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/2e89c02b-11c8-4134-acd0-d515b9ad5b30)
 
 _Studentų rūšiavimas į dvi grupes: (-15%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/3f4f6a78-eee4-4ee9-a399-139cb6a1d13a)
 
 _Dviejų grupių eksportas į du failus: (+165%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/8329514d-0390-45b2-ac36-d1cd12d2fc98)
 
 **Bendras laikas struct Studentas: 39s
@@ -138,18 +157,23 @@ Bendras laikas class Studentas: 27s**
 **1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas: (-35%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/54bd3169-5531-41e8-a333-3f0d95b8e5e4)
 
 _Failo nuskaitymas ir įrašymas į atmintį: (+82%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/9d09a4d6-f2aa-4e58-9847-28bc6c2db8ef)
 
 _Studentų rikiavimas: (-38%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/010f2d61-16f9-4361-b8fb-a7d29a5c81f9)
 
 _Studentų rūšiavimas į dvi grupes: (-21%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/1e8c26c4-91d0-46c5-b2f4-d90544cec039)
 
 _Dviejų grupių eksportas į du failus: (+170%)_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/e7b714c4-11c5-4a16-a740-b53328c87981)
 
 **Bendras laikas struct Studentas: 394s
@@ -159,7 +183,7 @@ Bendras laikas class Studentas: 267s**
 
 ## Optimizacijos lygių testai
 ### O1
-***1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+**1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas:_
 
