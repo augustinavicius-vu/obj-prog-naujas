@@ -159,57 +159,72 @@ Bendras laikas class Studentas: 267s**
 
 ## Optimizacijos lygių testai
 ### O1
-1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+***1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/302ee7d3-fe02-4470-a14c-76749cf5dedb)
 
 _Failo nuskaitymas ir įrašymas į atmintį:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/0858ec26-0bfa-45ae-a372-0e867c092311)
 
 _Studentų rikiavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/6d94bfe5-f6af-4bcf-a460-951a8161ba18)
 
 _Studentų rūšiavimas į dvi grupes:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/531547d6-6c1f-4518-863e-e69762a20eed)
 
 _Dviejų grupių eksportas į du failus:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/9b4e135b-3996-46e2-951a-f9917f72f9d8)
 
 ### O2
-1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+**1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/a587de83-6ccb-4aa4-a35d-104d5f192e26)
 
 _Failo nuskaitymas ir įrašymas į atmintį:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/c4046002-d2a4-417f-9429-2a316c4b310d)
 
 _Studentų rikiavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/664ffce5-da0d-4d8f-8608-ee8ad134ea5e)
 
 _Studentų rūšiavimas į dvi grupes:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/5be056b0-abc6-4e73-a5cc-7ce615cca5fd)
 
 _Dviejų grupių eksportas į du failus:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/ceec1f75-bc6e-487c-b982-405e47247ad7)
 
 ### O3
-1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
+**1.000.000 įrašų, 15 namų darbų - vector konteineris, 1 strategija, class Studentas**
 
 _Failo generavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/fbe5f5c5-f33c-437d-86f5-b15593b77e1e)
 
 _Failo nuskaitymas ir įrašymas į atmintį:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/ad6884ba-6738-4a48-9354-275deae419f7)
 
 _Studentų rikiavimas:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/d6f5a357-fe55-4d86-a69b-4916b244f03c)
 
 _Studentų rūšiavimas į dvi grupes:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/8d27d363-3d5f-4661-be99-792184a8f341)
 
 _Dviejų grupių eksportas į du failus:_
+
 ![image](https://github.com/augustinavicius-vu/obj-prog-naujas/assets/101087475/d54fec63-24cf-4cef-942f-0449f6a023e2)
 
 # Versijos
