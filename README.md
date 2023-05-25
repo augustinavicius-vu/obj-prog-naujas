@@ -10,30 +10,13 @@
 
 ```bash
 sudo apt install build-essential  
+sudo apt install cmake
 ```
 
-Vėliau pagrindinėje direktorijoje pakanka paleisti `make` komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.
-
-SVARBU: Makefile failas naudoja c++0x, tačiau tai kuriose operacinėse sistemose naudojamas c++11 užrašymas, tad jei kompiliatorius meta klaidą dėl makefile, galimas daiktas, kad reikia pakesiti makefile eilutes kur naudojamas c++0x. Pavyzdžiui:
-
-```bash
-g++ -std=c++0x -c main.cpp
-```
-
-į:
-
-```bash
-g++ -std=c++11 -c main.cpp
-```
+Vėliau pagrindinėje direktorijoje pakanka paleisti `cmake .` komandą projekto aplanke, kuri sugeneruos `Makefile` failą. Norint sukurti programos paleidimo failą, naudoti `make` komandą, kuri sukurs `objprog` ir `test` failus. `objprog` yra pagrindinis programos failas, o `test` failas turi savyje unit testus.
 
 ## Windows
-
-Labai patariu suinstaliuoti MinGW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą [nuorodą](https://linuxhint.com/run-makefile-windows/). Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti [čia](https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html).
-
-Vėliau pagrindinėje direktorijoje pakanka paleisti `make` komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.
-Taip pat, norėčiau pridurti, kad projektas taip pat palaiko ir `cmake`, tad galima atsiųsti šiam diegimo procesus reikalingus failus iš [čia](https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-windows-x86_64.msi) ir tieisog pagrindinėje direktorijoje paleisti `cmake .` komoandos ekvivalentą, norint sukurti paleidžiamą failą.
-
-PATARIMAS: Jeigu įmanoma, patariu susikurti [Windows Ubuntu WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+Prie naujausio `release` versijos yra prisegtas `setup.exe` failas, kurį naudojant galima įsidiegti šią programą „Windows“ kompiuteryje.
 
 # Testai
 
