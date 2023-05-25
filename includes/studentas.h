@@ -12,9 +12,6 @@ class Zmogus
     protected:
         std::string vardas_;
         std::string pavarde_;
-
-    public:
-        Zmogus(const std::string& vardas, const std::string& pavarde) : vardas_(vardas), pavarde_(pavarde) {}
 };
 
 class Studentas : public Zmogus
@@ -23,8 +20,9 @@ class Studentas : public Zmogus
         double egzaminas_;
         std::vector<double> namuDarbai_;
     public:
-        // Konstruktorius
-        Studentas(const std::string& vardas, const std::string& pavarde, const double &egzaminas, std::vector<double> &namuDarbai) : Zmogus(vardas, pavarde), egzaminas_(egzaminas), namuDarbai_(namuDarbai) {}
+        // Default
+        Studentas() : egzaminas_(0) {}
+        Studentas(std::istream& is);
 
         // GET
         std::string vardas() const { return vardas_; }
@@ -41,14 +39,6 @@ class Studentas : public Zmogus
 
         // Destruktorius
         ~Studentas() {}
-
-        // Kopija
-        Studentas(const Studentas&& naujas)
-        : Zmogus(std::move(naujas.vardas_), std::move(naujas.pavarde_)), egzaminas_(naujas.egzaminas_), namuDarbai_(std::move(naujas.namuDarbai_)) {}
-
-        // Perkėlimas
-        Studentas(Studentas&& naujas)
-        : Zmogus(std::move(naujas.vardas_), std::move(naujas.pavarde_)), egzaminas_(naujas.egzaminas_), namuDarbai_(std::move(naujas.namuDarbai_)) {}
 
         // Priskyrimo Operatorius
         Studentas &operator = (const Studentas& naujas)
