@@ -2,20 +2,32 @@ cmake_minimum_required(VERSION 3.12)
 project(ObjProg)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(include)
+add_subdirectory(googletest)
+
+include_directories(includes)
 
 set(SOURCES
-        main.cpp
         includes/functions.cpp
         includes/menu.cpp
         includes/studentas.cpp)
 
-# Add the header files
 set(HEADERS
         includes/menu.h
-        includes/calculations.h
+        includes/functions.h
         includes/studentas.h)
 
-# Create the executable
-add_executable(ObjProg ${SOURCES} ${HEADERS})
+set(TEST_SOURCES
+    test.cpp
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+target_link_libraries(${PROJECT_NAME} gtest_main)
+
+add_executable(tests ${TEST_SOURCES} ${HEADERS})
+
+target_link_libraries(tests gtest_main)
+
+add_custom_target(run_tests COMMAND tests)

@@ -7,6 +7,7 @@
 #include <vector>
 #include <iostream>
 
+
 class Zmogus
 {
     protected:
@@ -21,52 +22,21 @@ class Studentas : public Zmogus
         std::vector<double> namuDarbai_;
     public:
         // Default
-        Studentas() : egzaminas_(0) {}
-        Studentas(std::istream& is);
+        Studentas() : egzaminas_(0) {} //!< Default konstruktorius
+        Studentas(std::istream& is); //!< Konstruktiorius skirtas duomenų įvedimui
 
         // GET
-        std::string vardas() const { return vardas_; }
-        std::string pavarde() const { return pavarde_ ;}
-        double egzaminas() const { return egzaminas_; }
-        const std::vector<double> namuDarbai() const { return namuDarbai_; }
+        std::string vardas() const { return vardas_; } //!< GET metodas gauti vardą
+        std::string pavarde() const { return pavarde_ ;} //!< GET metodas gauti pavardę
+        double egzaminas() const { return egzaminas_; } //!< GET metodas gauti egzamino balą
+        const std::vector<double> namuDarbai() const { return namuDarbai_; } //! GET metodas gauti namų darbų vektorių
 
         // SET
-        std::istream &nuskaitytiFaila(std::istream &is);
-        std::istream &nuskaitytiKonsole(std::istream &is);
+        std::istream &nuskaitytiFaila(std::istream &is); //!< Metodas pritaikytas failo nuskaitymui ir duomenų įrašymui
+        std::istream &nuskaitytiKonsole(std::istream &is); //!< Metodas pritaikytas naudotojo ivesčiai priimti ir gautus duomenis įrašyti
 
         // HELPERS
-        double galutinisBalas() const;
-
-        // Destruktorius
-        ~Studentas() {}
-
-        // Priskyrimo Operatorius
-        Studentas &operator = (const Studentas& naujas)
-        {
-            if (this != &naujas)
-            {
-                vardas_ = naujas.vardas_;
-                pavarde_ = naujas.pavarde_;
-                egzaminas_ = naujas.egzaminas_;
-                namuDarbai_ = naujas.namuDarbai_;
-            }
-
-            return *this;
-        }
-
-        // Perkėlimo Operatorius
-        Studentas &operator=(Studentas &&naujas) noexcept
-        {
-            if (this != &naujas)
-            {
-                vardas_ = std::move(naujas.vardas_);
-                pavarde_ = std::move(naujas.pavarde_);
-                egzaminas_ = std::move(naujas.egzaminas_);
-                namuDarbai_ = std::move(naujas.namuDarbai_);
-            }
-
-            return *this;
-        }
+        double galutinisBalas() const; //!< Metodas grąžinantis studento balutinį balą
 };
 
 typedef std::vector<Studentas> StudentasVector;
