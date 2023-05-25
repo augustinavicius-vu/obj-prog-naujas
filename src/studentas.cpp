@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-#include "studentas.h"
-#include "functions.h"
+#include "../includes/studentas.h"
+#include "../includes/functions.h"
 
 std::istream& Studentas::nuskaitytiFaila(std::istream &is)
 {

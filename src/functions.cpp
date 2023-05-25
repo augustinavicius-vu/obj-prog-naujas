@@ -7,8 +7,8 @@
 #include <type_traits>
 #include <random>
 
-#include "functions.h"
-#include "studentas.h"
+#include "../includes/functions.h"
+#include "../includes/studentas.h"
 
 // Valyti Naudotojo Įvestį
 void ValytiIvesti()

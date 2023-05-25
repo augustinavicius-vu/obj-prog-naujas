@@ -162,17 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ObjProg
+# Target rules for targets named objprog
 
 # Build rule for target.
-ObjProg: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ObjProg
-.PHONY : ObjProg
+objprog: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 objprog
+.PHONY : objprog
 
 # fast build rule for target.
-ObjProg/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/build
-.PHONY : ObjProg/fast
+objprog/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/build
+.PHONY : objprog/fast
 
 #=============================================================================
 # Target rules for targets named tests
@@ -252,77 +252,101 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-includes/functions.o: includes/functions.cpp.o
-.PHONY : includes/functions.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-includes/functions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/functions.cpp.o
-.PHONY : includes/functions.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-includes/functions.i: includes/functions.cpp.i
-.PHONY : includes/functions.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-includes/functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/functions.cpp.i
-.PHONY : includes/functions.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-includes/functions.s: includes/functions.cpp.s
-.PHONY : includes/functions.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-includes/functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/functions.cpp.s
-.PHONY : includes/functions.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/main.cpp.s
+.PHONY : main.cpp.s
 
-includes/menu.o: includes/menu.cpp.o
-.PHONY : includes/menu.o
+src/functions.o: src/functions.cpp.o
+.PHONY : src/functions.o
 
 # target to build an object file
-includes/menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/menu.cpp.o
-.PHONY : includes/menu.cpp.o
+src/functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.o
+.PHONY : src/functions.cpp.o
 
-includes/menu.i: includes/menu.cpp.i
-.PHONY : includes/menu.i
+src/functions.i: src/functions.cpp.i
+.PHONY : src/functions.i
 
 # target to preprocess a source file
-includes/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/menu.cpp.i
-.PHONY : includes/menu.cpp.i
+src/functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.i
+.PHONY : src/functions.cpp.i
 
-includes/menu.s: includes/menu.cpp.s
-.PHONY : includes/menu.s
+src/functions.s: src/functions.cpp.s
+.PHONY : src/functions.s
 
 # target to generate assembly for a file
-includes/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/menu.cpp.s
-.PHONY : includes/menu.cpp.s
+src/functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.s
+.PHONY : src/functions.cpp.s
 
-includes/studentas.o: includes/studentas.cpp.o
-.PHONY : includes/studentas.o
+src/menu.o: src/menu.cpp.o
+.PHONY : src/menu.o
 
 # target to build an object file
-includes/studentas.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/studentas.cpp.o
-.PHONY : includes/studentas.cpp.o
+src/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/menu.cpp.o
+.PHONY : src/menu.cpp.o
 
-includes/studentas.i: includes/studentas.cpp.i
-.PHONY : includes/studentas.i
+src/menu.i: src/menu.cpp.i
+.PHONY : src/menu.i
 
 # target to preprocess a source file
-includes/studentas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/studentas.cpp.i
-.PHONY : includes/studentas.cpp.i
+src/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/menu.cpp.i
+.PHONY : src/menu.cpp.i
 
-includes/studentas.s: includes/studentas.cpp.s
-.PHONY : includes/studentas.s
+src/menu.s: src/menu.cpp.s
+.PHONY : src/menu.s
 
 # target to generate assembly for a file
-includes/studentas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ObjProg.dir/build.make CMakeFiles/ObjProg.dir/includes/studentas.cpp.s
-.PHONY : includes/studentas.cpp.s
+src/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/menu.cpp.s
+.PHONY : src/menu.cpp.s
+
+src/studentas.o: src/studentas.cpp.o
+.PHONY : src/studentas.o
+
+# target to build an object file
+src/studentas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/studentas.cpp.o
+.PHONY : src/studentas.cpp.o
+
+src/studentas.i: src/studentas.cpp.i
+.PHONY : src/studentas.i
+
+# target to preprocess a source file
+src/studentas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/studentas.cpp.i
+.PHONY : src/studentas.cpp.i
+
+src/studentas.s: src/studentas.cpp.s
+.PHONY : src/studentas.s
+
+# target to generate assembly for a file
+src/studentas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/studentas.cpp.s
+.PHONY : src/studentas.cpp.s
 
 test.o: test.cpp.o
 .PHONY : test.o
@@ -361,21 +385,24 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests"
-	@echo "... ObjProg"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... objprog"
 	@echo "... tests"
-	@echo "... includes/functions.o"
-	@echo "... includes/functions.i"
-	@echo "... includes/functions.s"
-	@echo "... includes/menu.o"
-	@echo "... includes/menu.i"
-	@echo "... includes/menu.s"
-	@echo "... includes/studentas.o"
-	@echo "... includes/studentas.i"
-	@echo "... includes/studentas.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... src/functions.o"
+	@echo "... src/functions.i"
+	@echo "... src/functions.s"
+	@echo "... src/menu.o"
+	@echo "... src/menu.i"
+	@echo "... src/menu.s"
+	@echo "... src/studentas.o"
+	@echo "... src/studentas.i"
+	@echo "... src/studentas.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

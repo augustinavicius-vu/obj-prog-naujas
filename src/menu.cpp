@@ -8,9 +8,9 @@
 #include <chrono>
 #include <algorithm>
 
-#include "menu.h"
-#include "studentas.h"
-#include "functions.h"
+#include "../includes/menu.h"
+#include "../includes/studentas.h"
+#include "../includes/functions.h"
 
 void PasirinkimasNaujasStudentas(StudentasVector &studentai)
 {
