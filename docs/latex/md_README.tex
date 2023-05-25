@@ -1,0 +1,277 @@
+2022/2023 metų 2 (pavasario) semestro objektinio programavimo dalyko atsiskaitomasis darbas. Šis darbas yra sudarytas iš keletos versijų, kurios, pagal dėstytojo duotus nurodymus, yra vis tobulinamos.\hypertarget{md_README_autotoc_md1}{}\doxysection{Kaip sukompiliuoti šią programą?}\label{md_README_autotoc_md1}
+\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Linux}\label{md_README_autotoc_md2}
+Ši programa naudojasi C++11 (c++0x) programavimo kalba, tad norit ją sukompiliuoti būtina per atsisiųsti reikalingus įrankius kaip g++ ir make (makefile\textquotesingle{}ui). Šiuos įrankius lengviausiai įmanoma įsidiegti naudojant šią komandą (Ubuntu)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install build-\/essential  }
+
+\end{DoxyCode}
+
+
+Vėliau pagrindinėje direktorijoje pakanka paleisti {\ttfamily make} komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.
+
+SVARBU\+: Makefile failas naudoja c++0x, tačiau tai kuriose operacinėse sistemose naudojamas c++11 užrašymas, tad jei kompiliatorius meta klaidą dėl makefile, galimas daiktas, kad reikia pakesiti makefile eilutes kur naudojamas c++0x. Pavyzdžiui\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/std=c++0x -\/c main.cpp}
+
+\end{DoxyCode}
+
+
+į\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/std=c++11 -\/c main.cpp}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Windows}\label{md_README_autotoc_md3}
+Labai patariu suinstaliuoti Min\+GW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą \href{https://linuxhint.com/run-makefile-windows/}{\texttt{ nuorodą}}. Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti \href{https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html}{\texttt{ čia}}.
+
+Vėliau pagrindinėje direktorijoje pakanka paleisti {\ttfamily make} komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas. Taip pat, norėčiau pridurti, kad projektas taip pat palaiko ir {\ttfamily cmake}, tad galima atsiųsti šiam diegimo procesus reikalingus failus iš \href{https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-windows-x86_64.msi}{\texttt{ čia}} ir tieisog pagrindinėje direktorijoje paleisti {\ttfamily cmake .} komoandos ekvivalentą, norint sukurti paleidžiamą failą.
+
+PATARIMAS\+: Jeigu įmanoma, patariu susikurti \href{https://learn.microsoft.com/en-us/windows/wsl/install}{\texttt{ Windows Ubuntu WSL}}\hypertarget{md_README_autotoc_md4}{}\doxysection{Testai}\label{md_README_autotoc_md4}
+Visi testai atlikti naudojant\+:
+
+
+\begin{DoxyItemize}
+\item CPU\+: AMD EPYC™ 7702
+\item RAM\+: 16 GB DDR4 RAM (ECC)
+\item SSD
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Programos spartos analizė}\label{md_README_autotoc_md5}
+{\itshape Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys}
+
+1.\+000 įrašų\+:
+
+
+
+10.\+000 įrašų\+:
+
+
+
+100.\+000 įrašų\+:
+
+
+
+1.\+000.\+000 įrašų\+:
+
+\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Konteinerių spartos analizė}\label{md_README_autotoc_md6}
+Pagal gautus rezultatus, list\textquotesingle{}as panašu yra tinkamiausias sprendimas optimizuoti programą. {\bfseries{Svarbu paminėti,}} kad deque yra universalesnis skirtingose situacijose. {\itshape Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys}
+
+1.\+000 įrašų\+:
+
+
+
+10.\+000 įrašų\+:
+
+
+
+100.\+000 įrašų\+:
+
+
+
+1.\+000.\+000 įrašų\+:
+
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{Įrašų rūšiavimo į dvi kategorijas skirtingų strategijų analizė}\label{md_README_autotoc_md7}
+Pagal gautus rezultatus, list\textquotesingle{}as panašu yra tinkamiausias sprendimas optimizuoti programą. {\bfseries{Svarbu paminėti,}} kad deque yra universalesnis skirtingose situacijose.
+
+
+\begin{DoxyEnumerate}
+\item Kuriami papildomai du atskiri konteineiriai galvočiams ir vargšiukams.
+\item Kuriamas papildomas vienas konteineris galvočiams ir iš originalaus ištrinant galvočių konteineryje esantis studentas
+\end{DoxyEnumerate}
+
+{\itshape Visur yra sugeneruojami 15 namų darbų pažymiai ir vienas egzamino pažymys} {\bfseries{1 strategijos rezultatai\+:}}
+
+1.\+000 įrašų\+:
+
+
+
+10.\+000 įrašų\+:
+
+
+
+100.\+000 įrašų\+:
+
+
+
+1.\+000.\+000 įrašų\+:
+
+
+
+{\bfseries{2 strategijos rezultatai\+:}}
+
+1.\+000 įrašų\+:
+
+
+
+10.\+000 įrašų\+:
+
+
+
+100.\+000 įrašų\+:
+
+
+
+1.\+000.\+000 įrašų\+: \+\_\+(Vector konteineris truko apie 14 val., kol kas priežastis nežinoma)\+\_\+\hypertarget{md_README_autotoc_md8}{}\doxysubsection{class vs struct studentams testai}\label{md_README_autotoc_md8}
+{\itshape Šie testai atlikti su jau optimizuotu kodu, kuris skiriasi nuo pradinių testų.}
+
+{\bfseries{100.\+000 įrašų, 15 namų darbų -\/ vector konteineris, 1 strategija, class Studentas}}
+
+{\itshape Failo generavimas\+: (-\/36\%)} 
+
+{\itshape Failo nuskaitymas ir įrašymas į atmintį\+: (+85\%)}
+
+
+
+{\itshape Studentų rikiavimas\+: (-\/95\%)}
+
+
+
+{\itshape Studentų rūšiavimas į dvi grupes\+: (-\/15\%)}
+
+
+
+{\itshape Dviejų grupių eksportas į du failus\+: (+165\%)}
+
+
+
+{\bfseries{Bendras laikas struct Studentas\+: 39s Bendras laikas class Studentas\+: 27s}}
+
+{\bfseries{1.\+000.\+000 įrašų, 15 namų darbų -\/ vector konteineris, 1 strategija, class Studentas}}
+
+{\itshape Failo generavimas\+: (-\/35\%)}
+
+
+
+{\itshape Failo nuskaitymas ir įrašymas į atmintį\+: (+82\%)}
+
+
+
+{\itshape Studentų rikiavimas\+: (-\/38\%)}
+
+
+
+{\itshape Studentų rūšiavimas į dvi grupes\+: (-\/21\%)}
+
+
+
+{\itshape Dviejų grupių eksportas į du failus\+: (+170\%)}
+
+
+
+{\bfseries{Bendras laikas struct Studentas\+: 394s Bendras laikas class Studentas\+: 267s}}
+
+$\ast$$\ast$\+\_\+\+Programa vidutiniškai veikia 30\% geriau\+\_\+$\ast$$\ast$\hypertarget{md_README_autotoc_md9}{}\doxysubsection{Optimizacijos lygių testai}\label{md_README_autotoc_md9}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsubsection{O1}\label{md_README_autotoc_md10}
+{\bfseries{1.\+000.\+000 įrašų, 15 namų darbų -\/ vector konteineris, 1 strategija, class Studentas}}
+
+{\itshape Failo generavimas\+:}
+
+
+
+{\itshape Failo nuskaitymas ir įrašymas į atmintį\+:}
+
+
+
+{\itshape Studentų rikiavimas\+:}
+
+
+
+{\itshape Studentų rūšiavimas į dvi grupes\+:}
+
+
+
+{\itshape Dviejų grupių eksportas į du failus\+:}
+
+\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{O2}\label{md_README_autotoc_md11}
+{\bfseries{1.\+000.\+000 įrašų, 15 namų darbų -\/ vector konteineris, 1 strategija, class Studentas}}
+
+{\itshape Failo generavimas\+:}
+
+
+
+{\itshape Failo nuskaitymas ir įrašymas į atmintį\+:}
+
+
+
+{\itshape Studentų rikiavimas\+:}
+
+
+
+{\itshape Studentų rūšiavimas į dvi grupes\+:}
+
+
+
+{\itshape Dviejų grupių eksportas į du failus\+:}
+
+\hypertarget{md_README_autotoc_md12}{}\doxysubsubsection{O3}\label{md_README_autotoc_md12}
+{\bfseries{1.\+000.\+000 įrašų, 15 namų darbų -\/ vector konteineris, 1 strategija, class Studentas}}
+
+{\itshape Failo generavimas\+:}
+
+
+
+{\itshape Failo nuskaitymas ir įrašymas į atmintį\+:}
+
+
+
+{\itshape Studentų rikiavimas\+:}
+
+
+
+{\itshape Studentų rūšiavimas į dvi grupes\+:}
+
+
+
+{\itshape Dviejų grupių eksportas į du failus\+:}
+
+\hypertarget{md_README_autotoc_md13}{}\doxysection{Versijos}\label{md_README_autotoc_md13}
+Čia nurodyti trumpi versijų aprašymai, daugiau informacijos \href{https://github.com/augustinavicius-vu/obj-prog/releases}{\texttt{ releases}} puslapyje.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{Versija 1.\+1}\label{md_README_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Pradėta naudoti {\ttfamily class} vietoj {\ttfamily struct} studentų duomenims laikyti
+\item Pertvarkytas kodas, kad būtų galima naudoti metodus, skirtus {\ttfamily class} objektui
+\item Panaikintos nebereikalingos funkcijos
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Versija 1.\+0}\label{md_README_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Atlikta dviejų skirtingų įrašų filtravimų strategija
+\item Pagal turimus duomenis kodas optimizuotas
+\item Atsižvelgus į dėstytojo nurodytus metodus, paspartinta vektoriaus konteinerio operacijos
+\item Pridėtas CMAKE
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Versija 0.\+5}\label{md_README_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Sukurtas naujas meniu punktas „\+Konteinerių veikimo greičio analizė“
+\item Naujas\+Studentas, Rikiuoti\+Studentus, Rusiuoti\+Studentus\+Balas funkcijos dabar naudoja {\ttfamily template} ir jų dizainas pritaikytas palaikyti vector, list ir deque konteinerius
+\item Atliktas konteinerių greičio išmatavimas
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md17}{}\doxysubsection{Versija 0.\+4}\label{md_README_autotoc_md17}
+
+\begin{DoxyItemize}
+\item Sukurtas naujas meniu punktas „\+Programos spartos analizė“
+\item Atskiras meniu punktas su visomis atskiromis funkcijomis sukurti, nuskaityti, surūšiuoti ir išvesti į failą įrašus
+\item Atliktas bendras ir skirtingų programos etapų spartos išmatavimas
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md18}{}\doxysubsection{Versija 0.\+3}\label{md_README_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Reorganizuotas kodas į skirtingus failus
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md19}{}\doxysubsection{Versija 0.\+2}\label{md_README_autotoc_md19}
+
+\begin{DoxyItemize}
+\item Programa gali nuskaityti duomenis iš failo
+\item Studentų išvestis dabar viename puslapyje gali pateikti vidurkį ir medianą
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsection{Versija 0.\+1}\label{md_README_autotoc_md20}
+
+\begin{DoxyItemize}
+\item Studentų satruktūros
+\item Bazinis meniu naudotojui
+\item Vidurkio, medianos skaičiavimo funkcijos
+\item Kodas gali realizuoti masyvus ir vektoriaus konteinerį
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md21}{}\doxysection{Autorius}\label{md_README_autotoc_md21}
+
+\begin{DoxyItemize}
+\item \href{https://www.github.com/augustinavicius-vu}{\texttt{ @augustinavicius-\/vu}} 
+\end{DoxyItemize}
