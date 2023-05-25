@@ -282,6 +282,7 @@ src/functions.o: src/functions.cpp.o
 # target to build an object file
 src/functions.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/functions.cpp.o
 .PHONY : src/functions.cpp.o
 
 src/functions.i: src/functions.cpp.i
@@ -290,6 +291,7 @@ src/functions.i: src/functions.cpp.i
 # target to preprocess a source file
 src/functions.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/functions.cpp.i
 .PHONY : src/functions.cpp.i
 
 src/functions.s: src/functions.cpp.s
@@ -298,6 +300,7 @@ src/functions.s: src/functions.cpp.s
 # target to generate assembly for a file
 src/functions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/objprog.dir/build.make CMakeFiles/objprog.dir/src/functions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/src/functions.cpp.s
 .PHONY : src/functions.cpp.s
 
 src/menu.o: src/menu.cpp.o

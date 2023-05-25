@@ -27,13 +27,17 @@ set(HEADERS
 )
 set(TEST_SOURCES
     test.cpp
+    src/functions.cpp
+)
+set(TEST_HEADERS
+    includes/functions.h
 )
 
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 target_link_libraries(${PROJECT_NAME} gtest_main)
 
-add_executable(tests ${TEST_SOURCES} ${HEADERS})
+add_executable(tests ${TEST_SOURCES} ${TEST_HEADERS})
 target_link_libraries(tests gtest_main)
 
 add_custom_target(run_tests COMMAND tests)
