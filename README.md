@@ -237,6 +237,7 @@ _Dviejų grupių eksportas į du failus:_
 # Versijos
 
 Čia nurodyti trumpi versijų aprašymai, daugiau informacijos [releases](https://github.com/augustinavicius-vu/obj-prog/releases) puslapyje.
+
 ## Versija 2.0
 * Doxygen dokumentacija
 * GoogleTest Unit Test Framework implementacija
