@@ -14,6 +14,7 @@ class Zmogus
         std::string pavarde_;
     public:
         virtual void info() {};
+        virtual ~Zmogus() = 0;
 };
 
 class Studentas : public Zmogus

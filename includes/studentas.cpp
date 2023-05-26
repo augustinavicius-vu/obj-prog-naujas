@@ -5,6 +5,8 @@
 #include "studentas.h"
 #include "functions.h"
 
+Zmogus::~Zmogus() {}
+
 std::istream& Studentas::nuskaitytiFaila(std::istream &is)
 {
     is >> vardas_ >> pavarde_;
