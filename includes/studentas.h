@@ -12,6 +12,8 @@ class Zmogus
     protected:
         std::string vardas_;
         std::string pavarde_;
+    public:
+        virtual void info() {};
 };
 
 class Studentas : public Zmogus
@@ -23,6 +25,12 @@ class Studentas : public Zmogus
         // Default
         Studentas() : egzaminas_(0) {}
         Studentas(std::istream& is);
+
+        // Override'as
+        void info() override
+        {
+            std::cout << "Studentas: " << vardas_ << " " << pavarde_ << std::endl;
+        }
 
         // GET
         std::string vardas() const { return vardas_; }
@@ -36,37 +44,6 @@ class Studentas : public Zmogus
 
         // HELPERS
         double galutinisBalas() const;
-
-        // Destruktorius
-        ~Studentas() {}
-
-        // Priskyrimo Operatorius
-        Studentas &operator = (const Studentas& naujas)
-        {
-            if (this != &naujas)
-            {
-                vardas_ = naujas.vardas_;
-                pavarde_ = naujas.pavarde_;
-                egzaminas_ = naujas.egzaminas_;
-                namuDarbai_ = naujas.namuDarbai_;
-            }
-
-            return *this;
-        }
-
-        // Perkėlimo Operatorius
-        Studentas &operator=(Studentas &&naujas) noexcept
-        {
-            if (this != &naujas)
-            {
-                vardas_ = std::move(naujas.vardas_);
-                pavarde_ = std::move(naujas.pavarde_);
-                egzaminas_ = std::move(naujas.egzaminas_);
-                namuDarbai_ = std::move(naujas.namuDarbai_);
-            }
-
-            return *this;
-        }
 };
 
 typedef std::vector<Studentas> StudentasVector;
