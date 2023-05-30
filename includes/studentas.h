@@ -14,6 +14,7 @@ class Zmogus
         std::string pavarde_;
     public:
         virtual void info() {};
+
         virtual ~Zmogus() = 0;
 };
 
@@ -45,6 +46,76 @@ class Studentas : public Zmogus
 
         // HELPERS
         double galutinisBalas() const;
+
+         // RULE OF FIVE
+        // Destruktorius
+        ~Studentas()
+        {
+            egzaminas_ = 0;
+            namuDarbai_.clear();
+            namuDarbai_.shrink_to_fit();
+        }
+
+        // Kopija
+        Studentas(const Studentas &naujas) : Zmogus(naujas), egzaminas_(naujas.egzaminas_), namuDarbai_(naujas.namuDarbai_) { }
+
+        // Perkėlimas
+        Studentas(Studentas &&naujas) noexcept : Zmogus(std::move(naujas)), egzaminas_(std::move(naujas.egzaminas_)), namuDarbai_(std::move(naujas.namuDarbai_)) { naujas.~Studentas(); }
+
+        // Priskyrimo Operatorius
+        Studentas &operator = (const Studentas& naujas)
+        {
+            if (this != &naujas)
+            {
+                vardas_ = naujas.vardas_;
+                pavarde_ = naujas.pavarde_;
+                egzaminas_ = naujas.egzaminas_;
+                namuDarbai_ = naujas.namuDarbai_;
+            }
+
+            return *this;
+        }
+
+        // Perkėlimo Operatorius
+        Studentas &operator=(Studentas &&naujas) noexcept
+        {
+            if (this != &naujas)
+            {
+                vardas_ = std::move(naujas.vardas_);
+                pavarde_ = std::move(naujas.pavarde_);
+                egzaminas_ = std::move(naujas.egzaminas_);
+                namuDarbai_ = std::move(naujas.namuDarbai_);
+
+                naujas.~Studentas();
+            }
+
+            return *this;
+        }
+
+        // cin ir cout perdengimai
+        friend std::istream& operator>>(std::istream& ivestis, Studentas &studentas)
+        {
+            ivestis >> studentas.vardas_ >> studentas.pavarde_ >> studentas.egzaminas_;
+            size_t darbuSkaicius;
+            ivestis >> darbuSkaicius;
+            studentas.namuDarbai_.resize(darbuSkaicius);
+            for (size_t i = 0; i < darbuSkaicius; ++i) {
+                ivestis >> studentas.namuDarbai_[i];
+            }
+            return ivestis;
+        }
+
+        friend std::ostream& operator<<(std::ostream& isvestis, const Studentas &studentas) {
+            isvestis << "Vardas: " << studentas.vardas_ << std::endl;
+            isvestis << "Pavardė: " << studentas.pavarde_ << std::endl;
+            isvestis << "Egzaminas: " << studentas.egzaminas_ << std::endl;
+            isvestis << "Namų darbai: ";
+            for (const auto& darbas : studentas.namuDarbai_) {
+                isvestis << darbas << " ";
+            }
+            isvestis << std::endl;
+            return isvestis;
+        }
 };
 
 typedef std::vector<Studentas> StudentasVector;

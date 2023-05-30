@@ -5,7 +5,7 @@
 #include "studentas.h"
 #include "functions.h"
 
-Zmogus::~Zmogus() {}
+Zmogus::~Zmogus() {};
 
 std::istream& Studentas::nuskaitytiFaila(std::istream &is)
 {
