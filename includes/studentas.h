@@ -41,13 +41,14 @@ class Studentas
             pavarde_.clear();
             egzaminas_ = 0;
             namuDarbai_.clear();
+            namuDarbai_.shrink_to_fit();
         }
 
         // Kopija
-        Studentas(const Studentas &naujas) : vardas_(naujas.vardas_), pavarde_(naujas.pavarde_), egzaminas_(naujas.egzaminas_), namuDarbai_(naujas.namuDarbai_) {}
+        Studentas(const Studentas &naujas) : vardas_(naujas.vardas_), pavarde_(naujas.pavarde_), egzaminas_(naujas.egzaminas_), namuDarbai_(naujas.namuDarbai_) { }
 
         // Perkėlimas
-        Studentas(Studentas &&naujas) noexcept : vardas_(std::move(naujas.vardas_)), pavarde_(std::move(naujas.pavarde_)), egzaminas_(std::move(naujas.egzaminas_)), namuDarbai_(std::move(naujas.namuDarbai_)) {}
+        Studentas(Studentas &&naujas) noexcept : vardas_(std::move(naujas.vardas_)), pavarde_(std::move(naujas.pavarde_)), egzaminas_(std::move(naujas.egzaminas_)), namuDarbai_(std::move(naujas.namuDarbai_)) { naujas.~Studentas(); }
 
         // Priskyrimo Operatorius
         Studentas &operator = (const Studentas& naujas)
@@ -72,6 +73,8 @@ class Studentas
                 pavarde_ = std::move(naujas.pavarde_);
                 egzaminas_ = std::move(naujas.egzaminas_);
                 namuDarbai_ = std::move(naujas.namuDarbai_);
+
+                naujas.~Studentas();
             }
 
             return *this;
