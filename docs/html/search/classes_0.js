@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['studentas_9',['Studentas',['../classStudentas.html',1,'']]]
+  ['atsitiktinisskaiciustest_12',['AtsitiktinisSkaiciusTest',['../classAtsitiktinisSkaiciusTest.html',1,'']]]
 ];

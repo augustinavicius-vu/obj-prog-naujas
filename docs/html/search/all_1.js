@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['galutinisbalas_1',['galutinisBalas',['../classStudentas.html#a62075cd6ad0d3a86129afadb480cf7e4',1,'Studentas']]]
+  ['egzaminas_1',['egzaminas',['../classStudentas.html#a64d09da390e433eb68d7ca43e414d570',1,'Studentas']]]
 ];

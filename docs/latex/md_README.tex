@@ -5,34 +5,13 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{sudo apt install build-\/essential  }
+\DoxyCodeLine{sudo apt install cmake}
 
 \end{DoxyCode}
 
 
-Vėliau pagrindinėje direktorijoje pakanka paleisti {\ttfamily make} komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.
-
-SVARBU\+: Makefile failas naudoja c++0x, tačiau tai kuriose operacinėse sistemose naudojamas c++11 užrašymas, tad jei kompiliatorius meta klaidą dėl makefile, galimas daiktas, kad reikia pakesiti makefile eilutes kur naudojamas c++0x. Pavyzdžiui\+:
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{g++ -\/std=c++0x -\/c main.cpp}
-
-\end{DoxyCode}
-
-
-į\+:
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{g++ -\/std=c++11 -\/c main.cpp}
-
-\end{DoxyCode}
-\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Windows}\label{md_README_autotoc_md3}
-Labai patariu suinstaliuoti Min\+GW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą \href{https://linuxhint.com/run-makefile-windows/}{\texttt{ nuorodą}}. Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti \href{https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html}{\texttt{ čia}}.
-
-Vėliau pagrindinėje direktorijoje pakanka paleisti {\ttfamily make} komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas. Taip pat, norėčiau pridurti, kad projektas taip pat palaiko ir {\ttfamily cmake}, tad galima atsiųsti šiam diegimo procesus reikalingus failus iš \href{https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-windows-x86_64.msi}{\texttt{ čia}} ir tieisog pagrindinėje direktorijoje paleisti {\ttfamily cmake .} komoandos ekvivalentą, norint sukurti paleidžiamą failą.
-
-PATARIMAS\+: Jeigu įmanoma, patariu susikurti \href{https://learn.microsoft.com/en-us/windows/wsl/install}{\texttt{ Windows Ubuntu WSL}}\hypertarget{md_README_autotoc_md4}{}\doxysection{Testai}\label{md_README_autotoc_md4}
+Vėliau pagrindinėje direktorijoje pakanka paleisti {\ttfamily cmake .} komandą projekto aplanke, kuri sugeneruos {\ttfamily Makefile} failą. Norint sukurti programos paleidimo failą, naudoti {\ttfamily make} komandą, kuri sukurs {\ttfamily objprog} ir {\ttfamily test} failus. {\ttfamily objprog} yra pagrindinis programos failas, o {\ttfamily test} failas turi savyje unit testus.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Windows}\label{md_README_autotoc_md3}
+Prie naujausio {\ttfamily release} versijos yra prisegtas {\ttfamily setup.\+exe} failas, kurį naudojant galima įsidiegti šią programą „\+Windows“ kompiuteryje.\hypertarget{md_README_autotoc_md4}{}\doxysection{Testai}\label{md_README_autotoc_md4}
 Visi testai atlikti naudojant\+:
 
 
@@ -229,48 +208,62 @@ $\ast$$\ast$\+\_\+\+Programa vidutiniškai veikia 30\% geriau\+\_\+$\ast$$\ast$\
 {\itshape Dviejų grupių eksportas į du failus\+:}
 
 \hypertarget{md_README_autotoc_md13}{}\doxysection{Versijos}\label{md_README_autotoc_md13}
-Čia nurodyti trumpi versijų aprašymai, daugiau informacijos \href{https://github.com/augustinavicius-vu/obj-prog/releases}{\texttt{ releases}} puslapyje.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{Versija 1.\+1}\label{md_README_autotoc_md14}
+Čia nurodyti trumpi versijų aprašymai, daugiau informacijos \href{https://github.com/augustinavicius-vu/obj-prog/releases}{\texttt{ releases}} puslapyje.\hypertarget{md_README_autotoc_md14}{}\doxysubsection{Versija 2.\+0}\label{md_README_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Doxygen dokumentacija
+\item Google\+Test Unit Test Framework implementacija
+\item setup.\+exe failo sukūrimas
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Versija 1.\+5}\label{md_README_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Sukurta abstrakčioji klasė {\ttfamily \mbox{\hyperlink{classZmogus}{Zmogus}}}, kurią paveldi {\ttfamily \mbox{\hyperlink{classStudentas}{Studentas}}} klasė
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Versija 1.\+2}\label{md_README_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Realizuotos visos „\+Rule of Five“ narės {\ttfamily \mbox{\hyperlink{classStudentas}{Studentas}}} klasėje
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md17}{}\doxysubsection{Versija 1.\+1}\label{md_README_autotoc_md17}
 
 \begin{DoxyItemize}
 \item Pradėta naudoti {\ttfamily class} vietoj {\ttfamily struct} studentų duomenims laikyti
 \item Pertvarkytas kodas, kad būtų galima naudoti metodus, skirtus {\ttfamily class} objektui
 \item Panaikintos nebereikalingos funkcijos
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md15}{}\doxysubsection{Versija 1.\+0}\label{md_README_autotoc_md15}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md18}{}\doxysubsection{Versija 1.\+0}\label{md_README_autotoc_md18}
 
 \begin{DoxyItemize}
 \item Atlikta dviejų skirtingų įrašų filtravimų strategija
 \item Pagal turimus duomenis kodas optimizuotas
 \item Atsižvelgus į dėstytojo nurodytus metodus, paspartinta vektoriaus konteinerio operacijos
 \item Pridėtas CMAKE
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsection{Versija 0.\+5}\label{md_README_autotoc_md16}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md19}{}\doxysubsection{Versija 0.\+5}\label{md_README_autotoc_md19}
 
 \begin{DoxyItemize}
 \item Sukurtas naujas meniu punktas „\+Konteinerių veikimo greičio analizė“
 \item Naujas\+Studentas, Rikiuoti\+Studentus, Rusiuoti\+Studentus\+Balas funkcijos dabar naudoja {\ttfamily template} ir jų dizainas pritaikytas palaikyti vector, list ir deque konteinerius
 \item Atliktas konteinerių greičio išmatavimas
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md17}{}\doxysubsection{Versija 0.\+4}\label{md_README_autotoc_md17}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsection{Versija 0.\+4}\label{md_README_autotoc_md20}
 
 \begin{DoxyItemize}
 \item Sukurtas naujas meniu punktas „\+Programos spartos analizė“
 \item Atskiras meniu punktas su visomis atskiromis funkcijomis sukurti, nuskaityti, surūšiuoti ir išvesti į failą įrašus
 \item Atliktas bendras ir skirtingų programos etapų spartos išmatavimas
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md18}{}\doxysubsection{Versija 0.\+3}\label{md_README_autotoc_md18}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md21}{}\doxysubsection{Versija 0.\+3}\label{md_README_autotoc_md21}
 
 \begin{DoxyItemize}
 \item Reorganizuotas kodas į skirtingus failus
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md19}{}\doxysubsection{Versija 0.\+2}\label{md_README_autotoc_md19}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md22}{}\doxysubsection{Versija 0.\+2}\label{md_README_autotoc_md22}
 
 \begin{DoxyItemize}
 \item Programa gali nuskaityti duomenis iš failo
 \item Studentų išvestis dabar viename puslapyje gali pateikti vidurkį ir medianą
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysubsection{Versija 0.\+1}\label{md_README_autotoc_md20}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md23}{}\doxysubsection{Versija 0.\+1}\label{md_README_autotoc_md23}
 
 \begin{DoxyItemize}
 \item Studentų satruktūros
 \item Bazinis meniu naudotojui
 \item Vidurkio, medianos skaičiavimo funkcijos
 \item Kodas gali realizuoti masyvus ir vektoriaus konteinerį
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md21}{}\doxysection{Autorius}\label{md_README_autotoc_md21}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md24}{}\doxysection{Autorius}\label{md_README_autotoc_md24}
 
 \begin{DoxyItemize}
 \item \href{https://www.github.com/augustinavicius-vu}{\texttt{ @augustinavicius-\/vu}} 

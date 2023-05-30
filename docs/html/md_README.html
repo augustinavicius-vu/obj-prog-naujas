@@ -73,16 +73,11 @@ Kaip sukompiliuoti šią programą?</h1>
 Linux</h2>
 <p>Ši programa naudojasi C++11 (c++0x) programavimo kalba, tad norit ją sukompiliuoti būtina per atsisiųsti reikalingus įrankius kaip g++ ir make (makefile'ui). Šiuos įrankius lengviausiai įmanoma įsidiegti naudojant šią komandą (Ubuntu):</p>
 <div class="fragment"><div class="line">sudo apt install build-essential  </div>
-</div><!-- fragment --><p>Vėliau pagrindinėje direktorijoje pakanka paleisti <code>make</code> komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas.</p>
-<p>SVARBU: Makefile failas naudoja c++0x, tačiau tai kuriose operacinėse sistemose naudojamas c++11 užrašymas, tad jei kompiliatorius meta klaidą dėl makefile, galimas daiktas, kad reikia pakesiti makefile eilutes kur naudojamas c++0x. Pavyzdžiui:</p>
-<div class="fragment"><div class="line">g++ -std=c++0x -c main.cpp</div>
-</div><!-- fragment --><p>į:</p>
-<div class="fragment"><div class="line">g++ -std=c++11 -c main.cpp</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+<div class="line">sudo apt install cmake</div>
+</div><!-- fragment --><p>Vėliau pagrindinėje direktorijoje pakanka paleisti <code>cmake .</code> komandą projekto aplanke, kuri sugeneruos <code>Makefile</code> failą. Norint sukurti programos paleidimo failą, naudoti <code>make</code> komandą, kuri sukurs <code>objprog</code> ir <code>test</code> failus. <code>objprog</code> yra pagrindinis programos failas, o <code>test</code> failas turi savyje unit testus.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Windows</h2>
-<p>Labai patariu suinstaliuoti MinGW paketų tvarkyklę, kuri leis greitai ir patogiai atsisiųsti tiek make, tiek kompiliatoriui reikalingus failus. Makefile atsisiųsti ir įsidiegti galima pagal šitą <a href="https://linuxhint.com/run-makefile-windows/">nuorodą</a>. Norint sukompiliuoti kodą eiliškumas yra labai panašus į make atsisiuntimą, daugiau apie tai galima rasti <a href="https://www.ics.uci.edu/~pattis/common/handouts/mingweclipse/mingw.html">čia</a>.</p>
-<p>Vėliau pagrindinėje direktorijoje pakanka paleisti <code>make</code> komandą ir atsiras output failas, kuris ir yra pagrindinis šios programos failas. Taip pat, norėčiau pridurti, kad projektas taip pat palaiko ir <code>cmake</code>, tad galima atsiųsti šiam diegimo procesus reikalingus failus iš <a href="https://github.com/Kitware/CMake/releases/download/v3.26.4/cmake-3.26.4-windows-x86_64.msi">čia</a> ir tieisog pagrindinėje direktorijoje paleisti <code>cmake .</code> komoandos ekvivalentą, norint sukurti paleidžiamą failą.</p>
-<p>PATARIMAS: Jeigu įmanoma, patariu susikurti <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Ubuntu WSL</a></p>
+<p>Prie naujausio <code>release</code> versijos yra prisegtas <code>setup.exe</code> failas, kurį naudojant galima įsidiegti šią programą „Windows“ kompiuteryje.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Testai</h1>
 <p>Visi testai atlikti naudojant:</p>
@@ -209,13 +204,30 @@ O3</h3>
 Versijos</h1>
 <p>Čia nurodyti trumpi versijų aprašymai, daugiau informacijos <a href="https://github.com/augustinavicius-vu/obj-prog/releases">releases</a> puslapyje.</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
+Versija 2.0</h2>
+<ul>
+<li>Doxygen dokumentacija</li>
+<li>GoogleTest Unit Test Framework implementacija</li>
+<li>setup.exe failo sukūrimas</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Versija 1.5</h2>
+<ul>
+<li>Sukurta abstrakčioji klasė <code><a class="el" href="classZmogus.html">Zmogus</a></code>, kurią paveldi <code><a class="el" href="classStudentas.html">Studentas</a></code> klasė</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Versija 1.2</h2>
+<ul>
+<li>Realizuotos visos „Rule of Five“ narės <code><a class="el" href="classStudentas.html">Studentas</a></code> klasėje</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Versija 1.1</h2>
 <ul>
 <li>Pradėta naudoti <code>class</code> vietoj <code>struct</code> studentų duomenims laikyti</li>
 <li>Pertvarkytas kodas, kad būtų galima naudoti metodus, skirtus <code>class</code> objektui</li>
 <li>Panaikintos nebereikalingos funkcijos</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Versija 1.0</h2>
 <ul>
 <li>Atlikta dviejų skirtingų įrašų filtravimų strategija</li>
@@ -223,32 +235,32 @@ Versija 1.0</h2>
 <li>Atsižvelgus į dėstytojo nurodytus metodus, paspartinta vektoriaus konteinerio operacijos</li>
 <li>Pridėtas CMAKE</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Versija 0.5</h2>
 <ul>
 <li>Sukurtas naujas meniu punktas „Konteinerių veikimo greičio analizė“</li>
 <li>NaujasStudentas, RikiuotiStudentus, RusiuotiStudentusBalas funkcijos dabar naudoja <code>template</code> ir jų dizainas pritaikytas palaikyti vector, list ir deque konteinerius</li>
 <li>Atliktas konteinerių greičio išmatavimas</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Versija 0.4</h2>
 <ul>
 <li>Sukurtas naujas meniu punktas „Programos spartos analizė“</li>
 <li>Atskiras meniu punktas su visomis atskiromis funkcijomis sukurti, nuskaityti, surūšiuoti ir išvesti į failą įrašus</li>
 <li>Atliktas bendras ir skirtingų programos etapų spartos išmatavimas</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Versija 0.3</h2>
 <ul>
 <li>Reorganizuotas kodas į skirtingus failus</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Versija 0.2</h2>
 <ul>
 <li>Programa gali nuskaityti duomenis iš failo</li>
 <li>Studentų išvestis dabar viename puslapyje gali pateikti vidurkį ir medianą</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Versija 0.1</h2>
 <ul>
 <li>Studentų satruktūros</li>
@@ -256,7 +268,7 @@ Versija 0.1</h2>
 <li>Vidurkio, medianos skaičiavimo funkcijos</li>
 <li>Kodas gali realizuoti masyvus ir vektoriaus konteinerį</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Autorius</h1>
 <ul>
 <li><a href="https://www.github.com/augustinavicius-vu">@augustinavicius-vu</a> </li>

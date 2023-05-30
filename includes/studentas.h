@@ -11,25 +11,25 @@
 class Zmogus
 {
     protected:
-        std::string vardas_;
-        std::string pavarde_;
+        std::string vardas_; //!< Žmogaus vardas
+        std::string pavarde_; //!< Žmogaus pavardė
 };
 
 class Studentas : public Zmogus
 {
     private:
-        double egzaminas_;
-        std::vector<double> namuDarbai_;
+        double egzaminas_; //!< Egzamino pažymys
+        std::vector<double> namuDarbai_; //!< Namų darbų pažymiai vektoriuje
     public:
         // Default
         Studentas() : egzaminas_(0) {} //!< Default konstruktorius
         Studentas(std::istream& is); //!< Konstruktiorius skirtas duomenų įvedimui
 
         // GET
-        std::string vardas() const { return vardas_; } //!< GET metodas gauti vardą
-        std::string pavarde() const { return pavarde_ ;} //!< GET metodas gauti pavardę
-        double egzaminas() const { return egzaminas_; } //!< GET metodas gauti egzamino balą
-        const std::vector<double> namuDarbai() const { return namuDarbai_; } //! GET metodas gauti namų darbų vektorių
+        std::string vardas() const { return vardas_; } //!< Metodas gauti vardą
+        std::string pavarde() const { return pavarde_ ;} //!< Metodas gauti pavardę
+        double egzaminas() const { return egzaminas_; } //!< Metodas gauti egzamino balą
+        const std::vector<double> namuDarbai() const { return namuDarbai_; } //! Metodas gauti namų darbų vektorių
 
         // SET
         std::istream &nuskaitytiFaila(std::istream &is); //!< Metodas pritaikytas failo nuskaitymui ir duomenų įrašymui

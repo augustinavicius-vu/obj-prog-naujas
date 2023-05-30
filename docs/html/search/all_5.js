@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['studentas_6',['Studentas',['../classStudentas.html',1,'Studentas'],['../classStudentas.html#ab459e995e8c9b24cdc9aec5b09a66539',1,'Studentas::Studentas()'],['../classStudentas.html#a00d6db6706f5e4182d3677ea4e90de61',1,'Studentas::Studentas(std::istream &amp;is)']]]
+  ['pavarde_6',['pavarde',['../classStudentas.html#af80936870cf0e4d66ae5cab31461e8ec',1,'Studentas']]],
+  ['pavarde_5f_7',['pavarde_',['../classZmogus.html#a85cd6103a5f887059263d15413a3f081',1,'Zmogus']]]
 ];
