@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/objprog.dir/main.cpp.o CMakeFiles/objprog.dir/src/functions.cpp.o CMakeFiles/objprog.dir/src/studentas.cpp.o CMakeFiles/objprog.dir/src/menu.cpp.o -o objprog  lib/libgtest_main.a lib/libgtest.a 
